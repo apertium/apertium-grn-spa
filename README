@@ -1,6 +1,4 @@
-Guarani and Spanish
-
-                            apertium-grn-spa
+Guarani and Spanish (`apertium-grn-spa`)
 ===============================================================================
 
 This is an Apertium language pair for translating between Guarani and
@@ -31,45 +29,46 @@ Compiling
 ===============================================================================
 
 Given the requirements being installed, you should be able to just run:
-
+```
 $ ./configure
 $ make
-# make install
-
-You can use ./autogen.sh instead of ./configure you're compiling from
-SVN. If you installed any prerequisite language packages using a --prefix
-to ./configure, make sure to give the same --prefix to ./configure here.
+```
+You can use `./autogen.sh` instead of `./configure` you're compiling from
+git. If you installed any prerequisite language packages using a `--prefix`
+to `./configure`, make sure to give the same `--prefix` to `./configure` here.
 
 Testing
 ===============================================================================
 
 If you are in the source directory after running make, the following
 commands should work:
-
+```
 $  echo "TODO test sentence 1" | apertium -d . grn-spa
 TODO test translated sentence 1
+```
 
+```
 $ echo "TODO test sentence 2" | apertium -d . spa-grn
 TODO test translated sentence 2
-
-After installing somewhere in $PATH, you should be able to do e.g.
-
+```
+After installing somewhere in `$PATH`, you should be able to do e.g.
+```
 $  echo "TODO test sentence 1" | apertium grn-spa
 TODO test translated sentence 1
-
+```
 Files and data
 ===============================================================================
 
-* apertium-grn-spa.grn-spa.dix  - Bilingual dictionary
-* apertium-grn-spa.grn-spa.t1x  - Chunking rules for translating into Spanish
-* apertium-grn-spa.spa-grn.t1x  - Chunking rules for translating into Guarani
-* apertium-grn-spa.grn-spa.t2x  - Interchunk rules for translating into Spanish
-* apertium-grn-spa.spa-grn.t2x  - Interchunk rules for translating into Guarani
-* apertium-grn-spa.grn-spa.t3x  - Postchunk rules for translating into Spanish
-* apertium-grn-spa.spa-grn.t3x  - Postchunk rules for translating into Guarani
-* apertium-grn-spa.grn-spa.lrx  - Lexical selection rules for translating into Spanish
-* apertium-grn-spa.spa-grn.lrx  - Lexical selection rules for translating into Guarani
-* modes.xml                     - Translation modes
+* `apertium-grn-spa.grn-spa.dix`  - Bilingual dictionary
+* `apertium-grn-spa.grn-spa.t1x`  - Chunking rules for translating into Spanish
+* `apertium-grn-spa.spa-grn.t1x`  - Chunking rules for translating into Guarani
+* `apertium-grn-spa.grn-spa.t2x`  - Interchunk rules for translating into Spanish
+* `apertium-grn-spa.spa-grn.t2x`  - Interchunk rules for translating into Guarani
+* `apertium-grn-spa.grn-spa.t3x`  - Postchunk rules for translating into Spanish
+* `apertium-grn-spa.spa-grn.t3x`  - Postchunk rules for translating into Guarani
+* `apertium-grn-spa.grn-spa.lrx`  - Lexical selection rules for translating into Spanish
+* `apertium-grn-spa.spa-grn.lrx`  - Lexical selection rules for translating into Guarani
+* `modes.xml`                     - Translation modes
 
 For more information
 ===============================================================================
@@ -84,6 +83,6 @@ Help and support
 If you need help using this language pair or data, you can contact:
 
 * Mailing list: apertium-stuff@lists.sourceforge.net
-* IRC: #apertium on irc.freenode.net
+* IRC: `#apertium` on `irc.freenode.net`
 
 See also the file AUTHORS included in this distribution.
