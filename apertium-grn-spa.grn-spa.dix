@@ -93,6 +93,9 @@
     <sdef n="lquot"           c="Left quote"/>
     <sdef n="rquot"           c="Right quote"/>
 
+    <sdef n="v"               c="Verb"/> 
+    <sdef n="iv"              c="Intransitive"/>
+
   </sdefs>
    <pardefs>
      <pardef n="mf_GD">
