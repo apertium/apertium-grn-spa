@@ -95,6 +95,7 @@
 
     <sdef n="v"               c="Verb"/> 
     <sdef n="iv"              c="Intransitive"/>
+    <sdef n="tn"              c="Tónico"/>
 
   </sdefs>
    <pardefs>
@@ -150,6 +151,9 @@
       <e><p><l>ñani<s n="v"/><s n="iv"/></l><r>correr<s n="vblex"/></r></p></e>
       <e><p><l>guata<s n="v"/><s n="iv"/></l><r>caminar<s n="vblex"/></r></p></e>
       
+      <!-- SECTION: Pronouns -->
+      <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>re<s n="prn"/></l><r>tú<s n="prn"/><s n="tn"/></r></p></e>
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
       <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
