@@ -5,7 +5,6 @@
 
   <sdefs>
     <!-- Define symbol definitions within <sdef> here. -->
-    <sdef n="v"               c="Verb"/>
     <sdef n="n"               c="Noun"/>
     <sdef n="np"              c="Proper noun"/>
     <sdef n="vblex"           c="Verb, lexical"/>
