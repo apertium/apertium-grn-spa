@@ -141,6 +141,11 @@
       <e><p><l>tata<s n="n"/></l><r>fuego<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>táva<s n="n"/></l><r>ciudad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ysyry<s n="n"/></l><r>río<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvy<s n="n"/></l><r>tierra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+
+      <!-- SECTION: Verbs -->
+      <e><p><l>ñani<s n="v"/><s n="iv"/></l><r>correr<s n="vblex"/></r></p></e>
+      <e><p><l>guata<s n="v"/><s n="iv"/></l><r>caminar<s n="vblex"/></r></p></e>
       
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
