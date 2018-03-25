@@ -100,14 +100,14 @@
   </sdefs>
    <pardefs>
      <pardef n="mf_GD">
-       <e r="LR"><p><l></l><r><s n="GD"/><s n="sg"/></r></p></e>
+       <e r="RL"><p><l></l><r><s n="GD"/><s n="sg"/></r></p></e>
        <e r="RL"><p><l></l><r><s n="m"/><s n="sg"/></r></p></e>
        <e r="RL"><p><l></l><r><s n="f"/><s n="sg"/></r></p></e>
      </pardef>
      <pardef n="n_n">
        <e r="LR"><p><l></l><r><s n="sg"/></r></p></e>
        <e r="RL"><p><l></l><r><s n="sg"/></r></p></e>
-       <e r="RL"><p><l></l><r><s n="sg"/></r></p></e>
+       <e r="RL"><p><l></l><r><s n="sg"/></r></p></e> 
      </pardef>
 
    </pardefs>
@@ -146,14 +146,23 @@
       <e><p><l>táva<s n="n"/></l><r>ciudad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ysyry<s n="n"/></l><r>río<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvy<s n="n"/></l><r>tierra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>sy<s n="n"/></l><r>madre<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
 
       <!-- SECTION: Verbs -->
       <e><p><l>ñani<s n="v"/><s n="iv"/></l><r>correr<s n="vblex"/></r></p></e>
       <e><p><l>guata<s n="v"/><s n="iv"/></l><r>caminar<s n="vblex"/></r></p></e>
+      <e><p><l>ko<s n="v"/><s n="iv"/></l><r>vivir<s n="vblex"/></r></p></e>
+
       
       <!-- SECTION: Pronouns -->
       <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>re<s n="prn"/></l><r>tú<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>o<s n="prn"/></l><r>él<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>ro<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>a<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
+
+      <!-- SECTION: Personal Pronouns -->
+      <e><p><l>che<s n="pers"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
       <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
