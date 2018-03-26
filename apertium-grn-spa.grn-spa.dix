@@ -125,6 +125,12 @@
       <e><p><l>hyepype<s n="post"/></l><r>adentro<s n="pr"/></r></p></e>
       <e><p><l>apytepe<s n="post"/></l><r>en<b/>medio<b/>de<s n="pr"/></r></p></e>
 
+      <e><p><l>ha<s n="post"/></l><r>donde<s n="pr"/></r></p></e>
+
+      <!-- SECTION: Determiners -->
+      <e><p><l>i<s n="det"/><s n="pos"/></l><r>su<s n="det"/></r></p></e>
+
+
 
       <!-- SECTION: Nouns -->
       <e><p><l>mitã<s n="n"/></l><r>niño<s n="n"/></r></p><par n="mf_GD"/></e>
@@ -157,12 +163,13 @@
       <!-- SECTION: Pronouns -->
       <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>re<s n="prn"/></l><r>tú<s n="prn"/><s n="tn"/></r></p></e>
-      <e><p><l>o<s n="prn"/></l><r>él<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>o<s n="prn"/></l><r>él/ella<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>ro<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>a<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Personal Pronouns -->
       <e><p><l>che<s n="pers"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
+
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
       <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
