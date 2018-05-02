@@ -39,6 +39,9 @@
     <sdef n="p1"              c="1st person"/>
     <sdef n="p2"              c="2nd person"/>
     <sdef n="p3"              c="3rd person"/>
+    <sdef n="incl"            c="inclusive"/>
+    <sdef n="excl"            c="exclusive"/>
+
 
     <sdef n="nt"              c="Neuter"/>
     <sdef n="ut"              c="Utrum"/>
@@ -168,7 +171,14 @@
       <e><p><l>a<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Personal Pronouns -->
-      <e><p><l>che<s n="pers"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>che<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>nde<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></l><r>tú<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ha'e<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>él/ella<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="incl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ore<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="excl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>peẽ<s n="prn"/><s n="pers"/><s n="p2"/><s n="pl"/></l><r>vosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ha'ekuéra<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>ellos/ellas<s n="pers"/><s n="tn"/></r></p></e>
+
 
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
