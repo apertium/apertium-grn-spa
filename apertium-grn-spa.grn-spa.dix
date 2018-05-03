@@ -184,6 +184,12 @@
 
       <!-- SECTION: Possesive pronouns -->
       <e><p><l>i<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>su<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>o<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>proprio/a<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>che<s n="prn"/><s n="pos"/><s n="p1"/><s n="sg"/></l><r>mí<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>nde<s n="prn"/><s n="pos"/><s n="p2"/><s n="sg"/></l><r>tu<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="incl"/><s n="pl"/></l><r>nuestro/a<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="excl"/><s n="pl"/></l><r>nuestro/a<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
 
 
 
