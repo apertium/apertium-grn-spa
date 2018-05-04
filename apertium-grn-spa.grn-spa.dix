@@ -159,6 +159,9 @@
       <e><p><l>po<s n="n"/></l><r>mano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akã<s n="n"/></l><r>cabeza<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ao<s n="n"/></l><r>ropa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>irũ<s n="n"/></l><r>amigo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>taita<s n="n"/></l><r>abuelo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+
             
       <!-- SECTION: Verbs -->
       <e><p><l>ñani<s n="v"/><s n="iv"/></l><r>correr<s n="vblex"/></r></p></e>
@@ -174,11 +177,11 @@
       <e><p><l>a<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Personal Pronouns -->
-      <e><p><l>che<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>nde<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></l><r>tú<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ché<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ndé<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></l><r>tú<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>ha'e<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>él/ella<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ñande<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="incl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ore<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="excl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ñandé<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="incl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>oré<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="excl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>peẽ<s n="prn"/><s n="pers"/><s n="p2"/><s n="pl"/></l><r>vosotros<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>ha'ekuéra<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>ellos/ellas<s n="pers"/><s n="tn"/></r></p></e>
 
