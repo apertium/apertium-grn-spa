@@ -133,6 +133,9 @@
       <!-- SECTION: Determiners -->
       <e><p><l>i<s n="det"/><s n="pos"/></l><r>su<s n="det"/></r></p></e>
 
+      <!-- SECTION: Quantifiers -->
+      <e><p><l>ita<s n="qnt"/></l><r>mucho<s n="adv"/></r></p></e>
+
 
 
       <!-- SECTION: Nouns -->
@@ -161,6 +164,7 @@
       <e><p><l>ao<s n="n"/></l><r>ropa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>irũ<s n="n"/></l><r>amigo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>taita<s n="n"/></l><r>abuelo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>túva<s n="n"/></l><r>padre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
 
             
       <!-- SECTION: Verbs -->
@@ -190,8 +194,8 @@
       <e><p><l>o<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>proprio/a<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>che<s n="prn"/><s n="pos"/><s n="p1"/><s n="sg"/></l><r>mí<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>nde<s n="prn"/><s n="pos"/><s n="p2"/><s n="sg"/></l><r>tu<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="incl"/><s n="pl"/></l><r>nuestro/a<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="excl"/><s n="pl"/></l><r>nuestro/a<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="incl"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="excl"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
 
 
