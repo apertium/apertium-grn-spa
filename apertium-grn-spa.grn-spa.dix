@@ -1872,14 +1872,13 @@
       <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Proclitics -->
-      <e><p><l>che<s n="acc"/><s n="p1"/><s n="sg"/><s n="pro"/></l><r>me<s n="pro"/><s n="tn"/></r></p></e>
-      <e><p><l>nde<s n="acc"/><s n="p2"/><s n="sg"/><s n="pro"/></l><r>te<s n="pro"/><s n="tn"/></r></p></e>
-      <e><p><l>chupe<s n="acc"/><s n="p3"/><s n="sg"/><s n="pro"/></l><r>le<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>che<s n="prn"/><s n="pro"/><s n="p1"/><s n="sg"/><s n="acc"/></l><r>me<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>nde<s n="prn"/><s n="pro"/><s n="p2"/><s n="sg"/><s n="acc"/></l><r>te<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>chupe<s n="prn"/><s n="pro"/><s n="p3"/><s n="sg"/><s n="acc"/></l><r>le<s n="pro"/><s n="tn"/></r></p></e>
       <e><p><l>ichupe<s n="acc"/><s n="p3"/><s n="sg"/><s n="pro"/></l><r>le<s n="pro"/><s n="tn"/></r></p></e>
-      <e><p><l>ñande<s n="acc"/><s n="p1"/><s n="pl"/><s n="pro"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
-      <e><p><l>ñande<s n="acc"/><s n="p1"/><s n="pl"/><s n="pro"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
-      <e><p><l>ore<s n="acc"/><s n="p1"/><s n="pl"/><s n="pro"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
-      <e><p><l>pende<s n="acc"/><s n="p2"/><s n="pl"/><s n="pro"/></l><r>os<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="prn"/><s n="pro"/><s n="p1"/><s n="pl"/><s n="acc"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>ore<s n="prn"/><s n="pro"/><s n="p1"/><s n="pl"/><s n="acc"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>pende<s n="prn"/><s n="pro"/><s n="p2"/><s n="pl"/><s n="acc"/></l><r>os<s n="pro"/><s n="tn"/></r></p></e>
       
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
