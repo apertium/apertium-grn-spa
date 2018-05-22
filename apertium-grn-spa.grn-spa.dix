@@ -1870,6 +1870,13 @@
       <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>chemba'e<s n="prn"/><s n="pos"/><s n="p1"/><s n="sg"/></l><r>mío<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>nemba'e<s n="prn"/><s n="pos"/><s n="p2"/><s n="sg"/></l><r>tuyo<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>imba'e<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>suyo<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ñanemba'e<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>oremba'e<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>penemba'e<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>imba'ekuéra<s n="prn"/><s n="pos"/><s n="p3"/><s n="pl"/></l><r>suyo<s n="pos"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Proclitics -->
       <e><p><l>che<s n="prn"/><s n="pro"/><s n="p1"/><s n="sg"/><s n="acc"/></l><r>me<s n="pro"/><s n="tn"/></r></p></e>
