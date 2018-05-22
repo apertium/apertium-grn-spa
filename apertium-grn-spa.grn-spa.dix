@@ -1823,7 +1823,21 @@
       <e><p><l>ýva<s n="n"/></l><r>mango_fruta<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ýva<s n="n"/></l><r>asta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>   
 
-            
+      <!-- SECTION: Biforms -->
+      <e><p><l>ramói<s n="n"/></l><r>abuelo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>remiarirõ<s n="n"/></l><r>nieto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>rovaja<s n="n"/></l><r>cuñado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ru<s n="n"/></l><r>padre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ryvy<s n="n"/></l><r>hermano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>rykéra<s n="n"/></l><r>hermana mayor<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ra’y<s n="n"/></l><r>hijo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>rajy<s n="n"/></l><r>hija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>rembireko<s n="n"/></l><r>esposa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>reindy<s n="n"/></l><r>hermana menor<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>rembirekorã<s n="n"/></l><r>novia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>rykeʼýra<s n="n"/></l><r>hermano mayor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ryvýra<s n="n"/></l><r>hermano menor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+
       <!-- SECTION: Verbs -->
       <e><p><l>ñani<s n="v"/><s n="iv"/></l><r>correr<s n="vblex"/></r></p></e>
       <e><p><l>guata<s n="v"/><s n="iv"/></l><r>caminar<s n="vblex"/></r></p></e>
