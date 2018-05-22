@@ -21,6 +21,7 @@
     <sdef n="ij"              c="Interjection"/>
     <sdef n="adj"             c="Adjective"/>
     <sdef n="prn"             c="Pronoun"/>
+    <sdef n="pro"             c="Proclitic"/>
 
     <sdef n="attr"            c="Attributive"/>
     <sdef n="top"             c="Toponym"/>
@@ -96,6 +97,7 @@
 
     <sdef n="v"               c="Verb"/> 
     <sdef n="iv"              c="Intransitive"/>
+    <sdef n="tv"              c="Transitive"/>
     <sdef n="tn"              c="Tónico"/>
     <sdef n="atn"              c="Átono"/>
 
@@ -1842,7 +1844,7 @@
       <e><p><l>ñani<s n="v"/><s n="iv"/></l><r>correr<s n="vblex"/></r></p></e>
       <e><p><l>guata<s n="v"/><s n="iv"/></l><r>caminar<s n="vblex"/></r></p></e>
       <e><p><l>ko<s n="v"/><s n="iv"/></l><r>vivir<s n="vblex"/></r></p></e>
-
+      <e><p><l>juhu<s n="v"/><s n="iv"/></l><r>encontrar<s n="vblex"/></r></p></e>
       
       <!-- SECTION: Pronouns -->
       <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
@@ -1869,8 +1871,16 @@
       <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
 
-
-
+      <!-- SECTION: Proclitics -->
+      <e><p><l>che<s n="acc"/><s n="p1"/><s n="sg"/><s n="pro"/></l><r>me<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>nde<s n="acc"/><s n="p2"/><s n="sg"/><s n="pro"/></l><r>te<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>chupe<s n="acc"/><s n="p3"/><s n="sg"/><s n="pro"/></l><r>le<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>ichupe<s n="acc"/><s n="p3"/><s n="sg"/><s n="pro"/></l><r>le<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="acc"/><s n="p1"/><s n="pl"/><s n="pro"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="acc"/><s n="p1"/><s n="pl"/><s n="pro"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>ore<s n="acc"/><s n="p1"/><s n="pl"/><s n="pro"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
+      <e><p><l>pende<s n="acc"/><s n="p2"/><s n="pl"/><s n="pro"/></l><r>os<s n="pro"/><s n="tn"/></r></p></e>
+      
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
       <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
