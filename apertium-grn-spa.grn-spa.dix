@@ -39,8 +39,6 @@
     <sdef n="p1"              c="1st person"/>
     <sdef n="p2"              c="2nd person"/>
     <sdef n="p3"              c="3rd person"/>
-    <sdef n="incl"            c="inclusive"/>
-    <sdef n="excl"            c="exclusive"/>
 
 
     <sdef n="nt"              c="Neuter"/>
@@ -99,6 +97,7 @@
     <sdef n="v"               c="Verb"/> 
     <sdef n="iv"              c="Intransitive"/>
     <sdef n="tn"              c="Tónico"/>
+    <sdef n="atn"              c="Átono"/>
 
   </sdefs>
    <pardefs>
@@ -1834,26 +1833,26 @@
       <!-- SECTION: Pronouns -->
       <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>re<s n="prn"/></l><r>tú<s n="prn"/><s n="tn"/></r></p></e>
-      <e><p><l>o<s n="prn"/></l><r>él/ella<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>o<s n="prn"/></l><r>el<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>ro<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>a<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Personal Pronouns -->
       <e><p><l>ché<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>ndé<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></l><r>tú<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ha'e<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>él/ella<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ñandé<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="incl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>oré<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="excl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ha'e<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>el<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ñandé<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>oré<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>peẽ<s n="prn"/><s n="pers"/><s n="p2"/><s n="pl"/></l><r>vosotros<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ha'ekuéra<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>ellos/ellas<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>ha'ekuéra<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>ellos<s n="pers"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Possesive pronouns -->
       <e><p><l>i<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>su<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>o<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>proprio/a<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>che<s n="prn"/><s n="pos"/><s n="p1"/><s n="sg"/></l><r>mí<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>nde<s n="prn"/><s n="pos"/><s n="p2"/><s n="sg"/></l><r>tu<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="incl"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="excl"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
 
 
