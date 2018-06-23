@@ -1832,8 +1832,14 @@
       <e><p><l>rykeʼýra<s n="n"/></l><r>hermano mayor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ryvýra<s n="n"/></l><r>hermano menor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
 
-      <!-- SECTION: Verbs -->
-      <e><p><l>me<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
+    <!-- SECTION: Verbs -->
+    <e><p><l>haʼe<s n="v"/><s n="iv"/></l><r>estar<s n="vbser"/></r></p></e>
+    <e><p><l>ikatu<s n="v"/><s n="iv"/></l><r>poder<s n="vblex"/></r></p></e>
+    <e><p><l>hiʼã<s n="v"/><s n="iv"/></l><r>parecer<s n="vblex"/></r></p></e>
+    <e><p><l>hiʼã<s n="v"/><s n="iv"/></l><r>desear<s n="vblex"/></r></p></e>
+    
+
+    <e><p><l>me<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
     <e><p><l>aime<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
     <e><p><l>ĩ<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
     <e><p><l>aĩ<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
