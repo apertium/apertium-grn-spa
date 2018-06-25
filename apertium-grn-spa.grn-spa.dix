@@ -10,8 +10,8 @@
     <sdef n="vblex"           c="Verb, lexical"/>
     <sdef n="vbmod"           c="Modal verb"/>
     <sdef n="vaux"            c="Auxiliary verb"/>
-    <sdef n="vbser"           c="'To be' verb"/>
-    <sdef n="vbhaver"         c="'To have' verb"/>
+    <sdef n="vbser"           c="ʼTo beʼ verb"/>
+    <sdef n="vbhaver"         c="ʼTo haveʼ verb"/>
     <sdef n="cnjsub"          c="Subordinating conjunction"/>
     <sdef n="cnjcoo"          c="Co-ordinating conjunction"/>
     <sdef n="cnjadv"          c="Adverbial conjunction"/>
@@ -25,6 +25,7 @@
 
     <sdef n="attr"            c="Attributive"/>
     <sdef n="top"             c="Toponym"/>
+    <sdef n="loc"             c="Toponym"/>
     <sdef n="ant"             c="Anthroponym"/>
     <sdef n="cog"             c="Cognomen"/>
     <sdef n="org"             c="Organisation"/>
@@ -47,6 +48,7 @@
     <sdef n="f"               c="Feminine"/>
     <sdef n="m"               c="Masculine"/>
     <sdef n="un"              c="No gender"/>
+    <sdef n="mf"              c=""/>
 
     <sdef n="sg"              c="Singular"/>
     <sdef n="du"              c="Dual"/>
@@ -83,7 +85,8 @@
     <sdef n="ord"             c="Ordinal"/>
     <sdef n="acr"             c="Acronym"/>
     <sdef n="unc"             c="Uncountable"/>
-    <sdef n="GD"              c="Uncountable"/>
+    <sdef n="ND"              c="Número para determinar"/>
+    <sdef n="GD"              c="Género para determinar"/>
 
     <sdef n="num"             c="Numeral"/>
     <sdef n="sent"            c="Sentence end"/>
@@ -101,6 +104,7 @@
     <sdef n="tn"              c="Tónico"/>
     <sdef n="atn"              c="Átono"/>
 
+
   </sdefs>
    <pardefs>
      <pardef n="mf_GD">
@@ -113,14 +117,28 @@
        <e r="RL"><p><l></l><r><s n="sg"/></r></p></e>
        <e r="RL"><p><l></l><r><s n="sg"/></r></p></e> 
      </pardef>
+     <pardef n="adj_mf|sp">
+       <e r="LR"><p><l></l><r><s n="mf"/><s n="sp"/></r></p></e>
+     </pardef>
+     <pardef n="adj_mf|ND">
+       <e r="LR"><p><l></l><r><s n="mf"/><s n="ND"/></r></p></e>
+     </pardef>
+     <pardef n="adj_GD|ND">
+       <e r="LR"><p><l></l><r><s n="GD"/><s n="ND"/></r></p></e>
+       <e r="RL"><p><l></l><r><s n="m"/><s n="sg"/></r></p></e>
+     </pardef>
 
    </pardefs>
    <section id="main" type="standard">
+
+      <!-- SECTION: Conjunciones -->
+      <e><p><l>ha<s n="cnjcoo"/></l><r>y<s n="cnjcoo"/></r></p></e>
       
       <!-- SECTION: Adpositions -->
       <e><p><l>pe<s n="post"/></l><r>en<s n="pr"/></r></p></e>
       <e><p><l>hagua<s n="post"/></l><r>para<s n="pr"/></r></p></e>
       <e><p><l>ndive<s n="post"/></l><r>con<s n="pr"/></r></p></e>
+      <e><p><l>guive<s n="post"/></l><r>desde<s n="pr"/></r></p></e>
       <e><p><l>pegua<s n="post"/></l><r>de<s n="pr"/></r></p></e>
       <e><p><l>kupe<s n="post"/></l><r>detras<b/>de<s n="pr"/></r></p></e>
       <e><p><l>tenonde<s n="post"/></l><r>delante<s n="pr"/></r></p></e>
@@ -131,20 +149,27 @@
 
       <!-- SECTION: Case -->
 
+      <!-- SECTION: Determinantes -->
+      <e r="LR"><p><l>r<s n="det"/></l><r></r></p></e>
+
       <!-- SECTION: Nouns -->
       <e><p><l>Tupãremimbou<s n="n"/></l><r>ángel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>achegety<s n="n"/></l><r>abecedario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>aguara<s n="n"/></l><r>zorro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>aguyjevete<s n="n"/></l><r>gratitud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ahoja<s n="n"/></l><r>manta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>aho'iha<s n="n"/></l><r>carpa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ahy'o<s n="n"/></l><r>garganta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ahy'orasy<s n="n"/></l><r>angina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>avañeʼẽ<s n="n"/></l><r>guaraní<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñeʼẽ<s n="n"/></l><r>lengua<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>karaiñeʼẽ<s n="n"/></l><r>castellano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>karaiñeʼẽ<s n="n"/></l><r>español<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ahoʼiha<s n="n"/></l><r>carpa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ahyʼo<s n="n"/></l><r>garganta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ahyʼorasy<s n="n"/></l><r>angina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ai<s n="n"/></l><r>lesión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ai<s n="n"/></l><r>llaga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ajaka<s n="n"/></l><r>canasto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ajaka<s n="n"/></l><r>cesto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>aju'y<s n="n"/></l><r>laurel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ajuʼy<s n="n"/></l><r>laurel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ajúra<s n="n"/></l><r>cuello<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akatúa<s n="n"/></l><r>derecha<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aky<s n="n"/></l><r>verde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -162,15 +187,15 @@
       <e><p><l>akãngao<s n="n"/></l><r>sombrero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akãngao<s n="n"/></l><r>gorra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>akãngatu<s n="n"/></l><r>memoria<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>akãnga'u<s n="n"/></l><r>vértigo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>akãngaʼu<s n="n"/></l><r>vértigo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akãngua<s n="n"/></l><r>mente<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>akãngue<s n="n"/></l><r>cráneo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akãnundu<s n="n"/></l><r>fiebre<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>akão'atã<s n="n"/></l><r>casco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>akãoʼatã<s n="n"/></l><r>casco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akãporã<s n="n"/></l><r>intelectual<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>akãraku<s n="n"/></l><r>fervor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>akãrapu'ã<s n="n"/></l><r>mejoría<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>akãrapu'ã<s n="n"/></l><r>desarrollo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>akãrapuʼã<s n="n"/></l><r>mejoría<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>akãrapuʼã<s n="n"/></l><r>desarrollo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>akãreko<s n="n"/></l><r>mentalidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>akãvai<s n="n"/></l><r>locura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ama<s n="n"/></l><r>lluvia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -180,7 +205,7 @@
       <e><p><l>amandaje<s n="n"/></l><r>asamblea<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>amandaje<s n="n"/></l><r>congreso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>amandáu<s n="n"/></l><r>granizo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>amasapy'a<s n="n"/></l><r>chaparrón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>amasapyʼa<s n="n"/></l><r>chaparrón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ambere<s n="n"/></l><r>lagartija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>anambusukue<s n="n"/></l><r>grosor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>andu<s n="n"/></l><r>sentido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -200,7 +225,7 @@
       <e><p><l>aojoheiharenda<s n="n"/></l><r>lavandería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aoryru<s n="n"/></l><r>valija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aosorokue<s n="n"/></l><r>harapo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ao'apohára<s n="n"/></l><r>modisto<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>aoʼapohára<s n="n"/></l><r>modisto<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>apañuãi<s n="n"/></l><r>problema<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ape<s n="n"/></l><r>faz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ape<s n="n"/></l><r>lomo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -211,7 +236,7 @@
       <e><p><l>apesã<s n="n"/></l><r>lote<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apesã<s n="n"/></l><r>ramo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apesã<s n="n"/></l><r>manojo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>apiru'a<s n="n"/></l><r>ampolla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>apiruʼa<s n="n"/></l><r>ampolla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>apo<s n="n"/></l><r>fabricación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>apo<s n="n"/></l><r>ejecución<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>apoha<s n="n"/></l><r>profesión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -220,13 +245,13 @@
       <e><p><l>apohatee<s n="n"/></l><r>protagonista<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>apohára<s n="n"/></l><r>agente<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>apokuaaha<s n="n"/></l><r>ingeniero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>aponde'a<s n="n"/></l><r>plan<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>apondeʼa<s n="n"/></l><r>plan<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apopyre<s n="n"/></l><r>hecho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apopyre<s n="n"/></l><r>industrial<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>apopyrã<s n="n"/></l><r>agenda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aporeko<s n="n"/></l><r>técnico<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>apose<s n="n"/></l><r>intención<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>apu'a<s n="n"/></l><r>perímetro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>apuʼa<s n="n"/></l><r>perímetro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apy<s n="n"/></l><r>remate<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apy<s n="n"/></l><r>fin<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>apyka<s n="n"/></l><r>silla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -238,6 +263,7 @@
       <e><p><l>apýra<s n="n"/></l><r>tope<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>araapy<s n="n"/></l><r>martes<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>aragua<s n="n"/></l><r>temporal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ary<s n="n"/></l><r>año<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>arai<s n="n"/></l><r>nube<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>arakõi<s n="n"/></l><r>lunes<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>aramboha<s n="n"/></l><r>almohada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -259,19 +285,19 @@
       <e><p><l>arapytu<s n="n"/></l><r>clima<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>arapytu<s n="n"/></l><r>oxígeno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>arapytu<s n="n"/></l><r>temperatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>arapytu'u<s n="n"/></l><r>vacación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>arapytuʼu<s n="n"/></l><r>vacación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ararechaukaha<s n="n"/></l><r>almanaque<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>arareñoihague<s n="n"/></l><r>natalicio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>araroguekúi<s n="n"/></l><r>otoño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>araro'y<s n="n"/></l><r>invierno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>araroʼy<s n="n"/></l><r>invierno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ararundy<s n="n"/></l><r>miércoles<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>arasa<s n="n"/></l><r>guayaba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aratiri<s n="n"/></l><r>rayo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>aravai<s n="n"/></l><r>tempestad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aravo<s n="n"/></l><r>hora<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aravopapaha<s n="n"/></l><r>reloj<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ara'aty<s n="n"/></l><r>época<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ara'aty<s n="n"/></l><r>periodo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>araʼaty<s n="n"/></l><r>época<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>araʼaty<s n="n"/></l><r>periodo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>arete<s n="n"/></l><r>fiesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>aripaka<s n="n"/></l><r>mesa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>asaje<s n="n"/></l><r>mediodía<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -288,7 +314,7 @@
       <e><p><l>ava<s n="n"/></l><r>gente<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>avajokoha<s n="n"/></l><r>hebilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>avapaje<s n="n"/></l><r>mago<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ava'aty<s n="n"/></l><r>sociedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>avaʼaty<s n="n"/></l><r>sociedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ayvu<s n="n"/></l><r>alboroto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ayvu<s n="n"/></l><r>murmullo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ayvu<s n="n"/></l><r>rumor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -321,14 +347,14 @@
       <e><p><l>guasu<s n="n"/></l><r>venado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>guataha<s n="n"/></l><r>vereda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>guataha<s n="n"/></l><r>peatón<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>gua'a<s n="n"/></l><r>guacamayo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>gua'úva<s n="n"/></l><r>ficción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>guaʼa<s n="n"/></l><r>guacamayo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>guaʼúva<s n="n"/></l><r>ficción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>guyra<s n="n"/></l><r>pájaro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>guyrajuru<s n="n"/></l><r>pico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>guéi<s n="n"/></l><r>buey<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>haiha<s n="n"/></l><r>lápiz<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>haihára<s n="n"/></l><r>escritor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>haimbe'eha<s n="n"/></l><r>lima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>haimbeʼeha<s n="n"/></l><r>lima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>haingatu<s n="n"/></l><r>ortografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>haipyre<s n="n"/></l><r>texto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>haipyvo<s n="n"/></l><r>estrofa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -338,10 +364,10 @@
       <e><p><l>havõ<s n="n"/></l><r>jabón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>hayhuha<s n="n"/></l><r>amante<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>hayhupy<s n="n"/></l><r>ídolo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ha'enteséva<s n="n"/></l><r>egoísta<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>ha'ãha<s n="n"/></l><r>vara<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ha'ãhára<s n="n"/></l><r>jugador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ha'ãkuaaha<s n="n"/></l><r>sensor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>haʼenteséva<s n="n"/></l><r>egoísta<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>haʼãha<s n="n"/></l><r>vara<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>haʼãhára<s n="n"/></l><r>jugador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>haʼãkuaaha<s n="n"/></l><r>sensor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>he<s n="n"/></l><r>sabor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>hechahare<s n="n"/></l><r>testigo<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>hechapy<s n="n"/></l><r>visión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -354,12 +380,12 @@
       <e><p><l>hepykue<s n="n"/></l><r>tarifa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>hero<s n="n"/></l><r>apodo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>heñóiva<s n="n"/></l><r>natalidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>he'iséva<s n="n"/></l><r>concepto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>hi'arekue<s n="n"/></l><r>duración<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>hi'upy<s n="n"/></l><r>vianda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>hi'upyrã<s n="n"/></l><r>menú<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>hi'upyrã<s n="n"/></l><r>provisión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>hi'upyrãrenda<s n="n"/></l><r>abasto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>heʼiséva<s n="n"/></l><r>concepto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>hiʼarekue<s n="n"/></l><r>duración<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>hiʼupy<s n="n"/></l><r>vianda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>hiʼupyrã<s n="n"/></l><r>menú<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>hiʼupyrã<s n="n"/></l><r>provisión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>hiʼupyrãrenda<s n="n"/></l><r>abasto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ho<s n="n"/></l><r>ida<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>hoko<s n="n"/></l><r>garza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>hova mokõiva<s n="n"/></l><r>hipócrita<s n="n"/></r></p><par n="mf_GD"/></e>
@@ -367,8 +393,8 @@
       <e><p><l>hupiha<s n="n"/></l><r>elevador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>hupiha<s n="n"/></l><r>grúa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>hupytykue<s n="n"/></l><r>alcance<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>hu'u<s n="n"/></l><r>tos<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>hu'y<s n="n"/></l><r>flecha<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>huʼu<s n="n"/></l><r>tos<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>huʼy<s n="n"/></l><r>flecha<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>hyru<s n="n"/></l><r>envase<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ijeheguíva<s n="n"/></l><r>autonomía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ikaraietémava<s n="n"/></l><r>anciano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -376,7 +402,7 @@
       <e><p><l>imbohapýva<s n="n"/></l><r>terna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>imboriahuetéva<s n="n"/></l><r>indigente<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>inimbo<s n="n"/></l><r>hilo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ipu'akavéva<s n="n"/></l><r>campeón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ipuʼakavéva<s n="n"/></l><r>campeón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>irundyha<s n="n"/></l><r>cuarto_habitación<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ita<s n="n"/></l><r>piedra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ita<s n="n"/></l><r>roca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -387,7 +413,7 @@
       <e><p><l>itakua<s n="n"/></l><r>gruta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>itakua<s n="n"/></l><r>cueva<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>itakua<s n="n"/></l><r>caverna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>itaku'ijy<s n="n"/></l><r>cemento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>itakuʼijy<s n="n"/></l><r>cemento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>itape<s n="n"/></l><r>losa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>itapoty<s n="n"/></l><r>musgo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>itapu<s n="n"/></l><r>campana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -401,7 +427,7 @@
       <e><p><l>jagua ñarõ<s n="n"/></l><r>ladrido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jaguarete<s n="n"/></l><r>leopardo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jaguarete<s n="n"/></l><r>tigre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jaguarete'i<s n="n"/></l><r>lince<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>jaguareteʼi<s n="n"/></l><r>lince<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jaguaru<s n="n"/></l><r>lobo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jahechaha<s n="n"/></l><r>espejo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jahéi<s n="n"/></l><r>impaciencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -414,7 +440,7 @@
       <e><p><l>japo<s n="n"/></l><r>proceder<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>japopyrã<s n="n"/></l><r>programa<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>japu<s n="n"/></l><r>engaño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jari'i<s n="n"/></l><r>acné<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>jariʼi<s n="n"/></l><r>acné<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jarýi<s n="n"/></l><r>abuelo<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jasy<s n="n"/></l><r>luna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jasy<s n="n"/></l><r>mes<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -430,7 +456,7 @@
       <e><p><l>jegua<s n="n"/></l><r>encaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jeguaka<s n="n"/></l><r>joya<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeguakarenda<s n="n"/></l><r>joyería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>jeguaka'apoha<s n="n"/></l><r>joyero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>jeguakaʼapoha<s n="n"/></l><r>joyero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jeguata<s n="n"/></l><r>marcha<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jehai<s n="n"/></l><r>raya<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jehai po pegua<s n="n"/></l><r>manuscrito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -439,14 +465,14 @@
       <e><p><l>jehasa asyeterei<s n="n"/></l><r>martirio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jehasapyre<s n="n"/></l><r>vivencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jehasarepy<s n="n"/></l><r>peaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jehasa'asy<s n="n"/></l><r>escasez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jehasaʼasy<s n="n"/></l><r>escasez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jehechauka<s n="n"/></l><r>señalización<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jehechavai<s n="n"/></l><r>trance<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jehejarei<s n="n"/></l><r>inacción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jehejarei<s n="n"/></l><r>impunidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeheka<s n="n"/></l><r>pesquisa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeheka<s n="n"/></l><r>búsqueda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>jehe'a<s n="n"/></l><r>fusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jeheʼa<s n="n"/></l><r>fusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeho<s n="n"/></l><r>viaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jehukue<s n="n"/></l><r>suceso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jehupi<s n="n"/></l><r>montaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -457,7 +483,7 @@
       <e><p><l>jeikeha<s n="n"/></l><r>entrada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeikeha<s n="n"/></l><r>acceso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jeikoporã<s n="n"/></l><r>bienestar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jeipe'a<s n="n"/></l><r>abolición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jeipeʼa<s n="n"/></l><r>abolición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeisyryku<s n="n"/></l><r>succión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeitykuaa<s n="n"/></l><r>paracaidismo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jejavy<s n="n"/></l><r>error<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -477,9 +503,9 @@
       <e><p><l>jeoko<s n="n"/></l><r>represión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jepapa<s n="n"/></l><r>censo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jepapa<s n="n"/></l><r>balance<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jepe'a<s n="n"/></l><r>raja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>jepe'a<s n="n"/></l><r>leña<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>jepe'a<s n="n"/></l><r>apertura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jepeʼa<s n="n"/></l><r>raja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jepeʼa<s n="n"/></l><r>leña<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jepeʼa<s n="n"/></l><r>apertura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jepichy<s n="n"/></l><r>masaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jepoko<s n="n"/></l><r>toque<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jepokuaa<s n="n"/></l><r>rutina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -490,7 +516,7 @@
       <e><p><l>jeporavo<s n="n"/></l><r>voto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jeporavorape<s n="n"/></l><r>sistema<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jepytaha<s n="n"/></l><r>mesón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jepy'amongeta<s n="n"/></l><r>meditación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jepyʼamongeta<s n="n"/></l><r>meditación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jere<s n="n"/></l><r>vuelta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jere<s n="n"/></l><r>entorno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jere<s n="n"/></l><r>periferia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -504,11 +530,11 @@
       <e><p><l>jerure<s n="n"/></l><r>petición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jesareko<s n="n"/></l><r>inspección<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jeso<s n="n"/></l><r>quiebra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>jetu'u<s n="n"/></l><r>obstinación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jetuʼu<s n="n"/></l><r>obstinación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jety<s n="n"/></l><r>patata<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>jey'uha<s n="n"/></l><r>bebedero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>je'ajokoha<s n="n"/></l><r>paracaídas<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
-      <e><p><l>je'yta<s n="n"/></l><r>natación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jeyʼuha<s n="n"/></l><r>bebedero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>jeʼajokoha<s n="n"/></l><r>paracaídas<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
+      <e><p><l>jeʼyta<s n="n"/></l><r>natación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>joaju<s n="n"/></l><r>unión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>joapy<s n="n"/></l><r>accesorio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>joavy<s n="n"/></l><r>discordia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -534,14 +560,14 @@
       <e><p><l>jopói<s n="n"/></l><r>premio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jopói<s n="n"/></l><r>propina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jopói<s n="n"/></l><r>regalo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>joyke'y<s n="n"/></l><r>hermano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>joykeʼy<s n="n"/></l><r>hermano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>joyvy<s n="n"/></l><r>dúo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>jo'oha<s n="n"/></l><r>pala<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>joʼoha<s n="n"/></l><r>pala<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ju<s n="n"/></l><r>aguja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>juaju<s n="n"/></l><r>nexo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>juhupyre<s n="n"/></l><r>hallazgo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jukeri<s n="n"/></l><r>zarza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>juku'a<s n="n"/></l><r>agitación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>jukuʼa<s n="n"/></l><r>agitación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>juky<s n="n"/></l><r>sal<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>juky<s n="n"/></l><r>gracia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jukysy<s n="n"/></l><r>sopa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -552,8 +578,8 @@
       <e><p><l>juru<s n="n"/></l><r>abertura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>juruhe<s n="n"/></l><r>apetito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>juvyha<s n="n"/></l><r>horca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ju'i<s n="n"/></l><r>rana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ju'ái<s n="n"/></l><r>bocio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>juʼi<s n="n"/></l><r>rana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>juʼái<s n="n"/></l><r>bocio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jyva<s n="n"/></l><r>brazo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>jyvaguy<s n="n"/></l><r>axila<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>jyvanga<s n="n"/></l><r>codo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -570,18 +596,18 @@
       <e><p><l>kamby<s n="n"/></l><r>leche<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kamby kyrakue<s n="n"/></l><r>manteca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kamisa<s n="n"/></l><r>camisa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kane'õ<s n="n"/></l><r>fatiga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kangue'aty<s n="n"/></l><r>osario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaneʼõ<s n="n"/></l><r>fatiga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kangueʼaty<s n="n"/></l><r>osario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kangy<s n="n"/></l><r>débil<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>kangyreko<s n="n"/></l><r>debilidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kapi'iguasu<s n="n"/></l><r>paja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kapi'ipe<s n="n"/></l><r>césped<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kapi'ipe<s n="n"/></l><r>pasto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kapiʼiguasu<s n="n"/></l><r>paja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kapiʼipe<s n="n"/></l><r>césped<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kapiʼipe<s n="n"/></l><r>pasto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>karai<s n="n"/></l><r>señor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>karaja<s n="n"/></l><r>gorila<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>karanda'y<s n="n"/></l><r>palmera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>karia'y<s n="n"/></l><r>mozo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>karia'yporã<s n="n"/></l><r>galán<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>karandaʼy<s n="n"/></l><r>palmera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kariaʼy<s n="n"/></l><r>mozo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kariaʼyporã<s n="n"/></l><r>galán<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>karréta<s n="n"/></l><r>carreta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>karu<s n="n"/></l><r>almuerzo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>karugua<s n="n"/></l><r>pantano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -599,21 +625,21 @@
       <e><p><l>katupyry<s n="n"/></l><r>talento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>katupyrykue<s n="n"/></l><r>habilidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kavaju<s n="n"/></l><r>caballo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kavajura'y<s n="n"/></l><r>potro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kavajuraʼy<s n="n"/></l><r>potro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kavara<s n="n"/></l><r>cabra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kañyha<s n="n"/></l><r>escondite<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'aguy<s n="n"/></l><r>monte<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'aguyreko<s n="n"/></l><r>salvaje<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>ka'aru<s n="n"/></l><r>tarde<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'aruete<s n="n"/></l><r>atardecer<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'avo<s n="n"/></l><r>vegetal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'avo<s n="n"/></l><r>lechuga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'avo'uha<s n="n"/></l><r>herbívoro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'ay<s n="n"/></l><r>mate<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'i<s n="n"/></l><r>simio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'irãi<s n="n"/></l><r>presidio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'irãi<s n="n"/></l><r>cárcel<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ka'u<s n="n"/></l><r>borracho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼaguy<s n="n"/></l><r>monte<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼaguyreko<s n="n"/></l><r>salvaje<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>kaʼaru<s n="n"/></l><r>tarde<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼaruete<s n="n"/></l><r>atardecer<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼavo<s n="n"/></l><r>vegetal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼavo<s n="n"/></l><r>lechuga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼavoʼuha<s n="n"/></l><r>herbívoro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼay<s n="n"/></l><r>mate<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼi<s n="n"/></l><r>simio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼirãi<s n="n"/></l><r>presidio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼirãi<s n="n"/></l><r>cárcel<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kaʼu<s n="n"/></l><r>borracho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kerasy<s n="n"/></l><r>insomnio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kesu<s n="n"/></l><r>queso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kochõ<s n="n"/></l><r>colchón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -627,20 +653,20 @@
       <e><p><l>kotyguasu<s n="n"/></l><r>salón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kotyguasu<s n="n"/></l><r>sala<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kotykeha<s n="n"/></l><r>alcoba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kotymba'apoha<s n="n"/></l><r>oficina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kotymbaʼapoha<s n="n"/></l><r>oficina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kua<s n="n"/></l><r>hoyo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kua<s n="n"/></l><r>agujero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kua<s n="n"/></l><r>orificio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kua<s n="n"/></l><r>boquete<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuaa<s n="n"/></l><r>saber<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuaaha'ãrã<s n="n"/></l><r>laboratorio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuaara'ã<s n="n"/></l><r>teoría<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuaara'ã<s n="n"/></l><r>pronóstico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuaara'ã<s n="n"/></l><r>acertijo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuaahaʼãrã<s n="n"/></l><r>laboratorio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuaaraʼã<s n="n"/></l><r>teoría<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuaaraʼã<s n="n"/></l><r>pronóstico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuaaraʼã<s n="n"/></l><r>acertijo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuarahy<s n="n"/></l><r>sol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuarahyreike<s n="n"/></l><r>oeste<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuarahyreike<s n="n"/></l><r>ocaso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuarahy'ã<s n="n"/></l><r>sombra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuarahyʼã<s n="n"/></l><r>sombra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuarapuku<s n="n"/></l><r>tubo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuarepoti<s n="n"/></l><r>metal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuarepoti<s n="n"/></l><r>hierro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -651,33 +677,33 @@
       <e><p><l>kuatia apesã<s n="n"/></l><r>legajo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatia atã<s n="n"/></l><r>cartón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiaapopyrã<s n="n"/></l><r>libreto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuatiachauka'i<s n="n"/></l><r>carné<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuatiachaukaʼi<s n="n"/></l><r>carné<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiahai<s n="n"/></l><r>cuaderno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiahaihára<s n="n"/></l><r>periodista<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>kuatiahaimbo'e<s n="n"/></l><r>periodismo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuatiahaimboʼe<s n="n"/></l><r>periodismo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiahaipyre<s n="n"/></l><r>periódico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiakuéra<s n="n"/></l><r>papelería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiamaranduha<s n="n"/></l><r>gaceta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiaporupy<s n="n"/></l><r>vale<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kuatiañemu<s n="n"/></l><r>factura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuatia'atã<s n="n"/></l><r>diploma<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuatia'atã<s n="n"/></l><r>pergamino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuatia'atã'i<s n="n"/></l><r>esquela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuatia'atã'i<s n="n"/></l><r>tarjeta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuatiaʼatã<s n="n"/></l><r>diploma<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuatiaʼatã<s n="n"/></l><r>pergamino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuatiaʼatãʼi<s n="n"/></l><r>esquela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuatiaʼatãʼi<s n="n"/></l><r>tarjeta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuerái<s n="n"/></l><r>hastío<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuimba'e<s n="n"/></l><r>macho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuimba'e<s n="n"/></l><r>varón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuimba'e<s n="n"/></l><r>hombre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kuimba'ete<s n="n"/></l><r>caballero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuimbaʼe<s n="n"/></l><r>macho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuimbaʼe<s n="n"/></l><r>varón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuimbaʼe<s n="n"/></l><r>hombre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuimbaʼete<s n="n"/></l><r>caballero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kupy<s n="n"/></l><r>canilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kupy<s n="n"/></l><r>pierna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kupy<s n="n"/></l><r>pantorrilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kupyju<s n="n"/></l><r>gallo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kupylia<s n="n"/></l><r>zancadilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kure<s n="n"/></l><r>cerdo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kure ka'aguy<s n="n"/></l><r>jabalí<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kure kaʼaguy<s n="n"/></l><r>jabalí<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kurekyrakue<s n="n"/></l><r>tocino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>kurera'y<s n="n"/></l><r>lechón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kureraʼy<s n="n"/></l><r>lechón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kururu<s n="n"/></l><r>sapo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kurusu<s n="n"/></l><r>cruz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuruvai<s n="n"/></l><r>lepra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -688,9 +714,9 @@
       <e><p><l>kuña<s n="n"/></l><r>mujer<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuña<s n="n"/></l><r>hembra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kuñarekokuaa<s n="n"/></l><r>ginecología<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ku'a<s n="n"/></l><r>cintura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ku'a<s n="n"/></l><r>mitad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ku'imi<s n="n"/></l><r>pizca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuʼa<s n="n"/></l><r>cintura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuʼa<s n="n"/></l><r>mitad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kuʼimi<s n="n"/></l><r>pizca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ky<s n="n"/></l><r>piojo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kygua<s n="n"/></l><r>peine<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kyguái<s n="n"/></l><r>coma<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -707,10 +733,10 @@
       <e><p><l>kyse<s n="n"/></l><r>cuchillo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kysepuku<s n="n"/></l><r>sable<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kysepuku<s n="n"/></l><r>espada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>kyse'akua<s n="n"/></l><r>puñal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>kyseʼakua<s n="n"/></l><r>puñal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kyta<s n="n"/></l><r>punto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>kytã<s n="n"/></l><r>verruga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ky'a<s n="n"/></l><r>impureza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>kyʼa<s n="n"/></l><r>impureza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>káva<s n="n"/></l><r>avispa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>káva<s n="n"/></l><r>abeja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>kõi<s n="n"/></l><r>doble<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -719,7 +745,7 @@
       <e><p><l>liméta<s n="n"/></l><r>botella<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>léi<s n="n"/></l><r>ley<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>maitei<s n="n"/></l><r>saludo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mandu'apy<s n="n"/></l><r>memorándum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>manduʼapy<s n="n"/></l><r>memorándum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mandyju<s n="n"/></l><r>algodón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>manga<s n="n"/></l><r>pelota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mano<s n="n"/></l><r>muerte<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -740,62 +766,62 @@
       <e><p><l>mbarakaja kuña<s n="n"/></l><r>gato<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbarete<s n="n"/></l><r>energía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbarete<s n="n"/></l><r>fuerte<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apoha<s n="n"/></l><r>taller<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apoha<s n="n"/></l><r>empresa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apohára<s n="n"/></l><r>peón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apohára<s n="n"/></l><r>obrero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apohára<s n="n"/></l><r>operario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apohára aty<s n="n"/></l><r>sindicato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apokuaa<s n="n"/></l><r>arte<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>mba'apokuaa<s n="n"/></l><r>técnico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'aporepy<s n="n"/></l><r>jornal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'apo'ára<s n="n"/></l><r>jornada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'asy<s n="n"/></l><r>enfermedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'asy<s n="n"/></l><r>plaga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'asy<s n="n"/></l><r>infección<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'asyguasu<s n="n"/></l><r>epidemia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'asypo'i<s n="n"/></l><r>tuberculosis<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'asypo'i<s n="n"/></l><r>tisis<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'e<s n="n"/></l><r>objeto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'eapokuaa<s n="n"/></l><r>ingeniería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'ejere<s n="n"/></l><r>orbe<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'ejerure<s n="n"/></l><r>mendicidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'ejára<s n="n"/></l><r>titular<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>mba'embotyha<s n="n"/></l><r>tranca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'embyasy<s n="n"/></l><r>melancolía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'eopu'i<s n="n"/></l><r>timbre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'epohýi<s n="n"/></l><r>carga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'eporurã<s n="n"/></l><r>infraestructura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'eporurã<s n="n"/></l><r>kit<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'epu<s n="n"/></l><r>sonido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'epu porã<s n="n"/></l><r>melodía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'epuku<s n="n"/></l><r>barra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'epyahu<s n="n"/></l><r>innovación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'era'ã<s n="n"/></l><r>prueba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'era'ãha<s n="n"/></l><r>balanza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'erekaha<s n="n"/></l><r>detector<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'erendy<s n="n"/></l><r>foco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'erepy<s n="n"/></l><r>mercadería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'ery<s n="n"/></l><r>líquido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'etee<s n="n"/></l><r>patrimonio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'evai<s n="n"/></l><r>mal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'evu<s n="n"/></l><r>globo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'e'apo<s n="n"/></l><r>manufactura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'e'apoha<s n="n"/></l><r>fábrica<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'e'apopy<s n="n"/></l><r>industria<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yru<s n="n"/></l><r>mochila<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yru<s n="n"/></l><r>maleta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yru<s n="n"/></l><r>caja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yrumýi<s n="n"/></l><r>autobús<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yrumýi<s n="n"/></l><r>camión<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yrurã'i<s n="n"/></l><r>urna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yruveve<s n="n"/></l><r>avión<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yruñongatuha<s n="n"/></l><r>garaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mba'yru'i<s n="n"/></l><r>maletín<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapoha<s n="n"/></l><r>taller<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapoha<s n="n"/></l><r>empresa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapohára<s n="n"/></l><r>peón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapohára<s n="n"/></l><r>obrero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapohára<s n="n"/></l><r>operario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapohára aty<s n="n"/></l><r>sindicato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapokuaa<s n="n"/></l><r>arte<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>mbaʼapokuaa<s n="n"/></l><r>técnico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼaporepy<s n="n"/></l><r>jornal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼapoʼára<s n="n"/></l><r>jornada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼasy<s n="n"/></l><r>enfermedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼasy<s n="n"/></l><r>plaga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼasy<s n="n"/></l><r>infección<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼasyguasu<s n="n"/></l><r>epidemia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼasypoʼi<s n="n"/></l><r>tuberculosis<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼasypoʼi<s n="n"/></l><r>tisis<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼe<s n="n"/></l><r>objeto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeapokuaa<s n="n"/></l><r>ingeniería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼejere<s n="n"/></l><r>orbe<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼejerure<s n="n"/></l><r>mendicidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼejára<s n="n"/></l><r>titular<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>mbaʼembotyha<s n="n"/></l><r>tranca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼembyasy<s n="n"/></l><r>melancolía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeopuʼi<s n="n"/></l><r>timbre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼepohýi<s n="n"/></l><r>carga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeporurã<s n="n"/></l><r>infraestructura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeporurã<s n="n"/></l><r>kit<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼepu<s n="n"/></l><r>sonido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼepu porã<s n="n"/></l><r>melodía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼepuku<s n="n"/></l><r>barra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼepyahu<s n="n"/></l><r>innovación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeraʼã<s n="n"/></l><r>prueba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeraʼãha<s n="n"/></l><r>balanza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼerekaha<s n="n"/></l><r>detector<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼerendy<s n="n"/></l><r>foco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼerepy<s n="n"/></l><r>mercadería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼery<s n="n"/></l><r>líquido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼetee<s n="n"/></l><r>patrimonio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼevai<s n="n"/></l><r>mal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼevu<s n="n"/></l><r>globo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeʼapo<s n="n"/></l><r>manufactura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeʼapoha<s n="n"/></l><r>fábrica<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼeʼapopy<s n="n"/></l><r>industria<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyru<s n="n"/></l><r>mochila<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyru<s n="n"/></l><r>maleta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyru<s n="n"/></l><r>caja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyrumýi<s n="n"/></l><r>autobús<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyrumýi<s n="n"/></l><r>camión<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyrurãʼi<s n="n"/></l><r>urna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyruveve<s n="n"/></l><r>avión<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyruñongatuha<s n="n"/></l><r>garaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbaʼyruʼi<s n="n"/></l><r>maletín<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbegue<s n="n"/></l><r>lentitud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mberu<s n="n"/></l><r>mosca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbiru'a<s n="n"/></l><r>viruela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbiru'atavy<s n="n"/></l><r>varicela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbiruʼa<s n="n"/></l><r>viruela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbiruʼatavy<s n="n"/></l><r>varicela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mboavevoha<s n="n"/></l><r>levadura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbochyryryha<s n="n"/></l><r>sartén<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mboguaha<s n="n"/></l><r>filtro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -804,8 +830,8 @@
       <e><p><l>mbohapehára<s n="n"/></l><r>jefe<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbohuparenda<s n="n"/></l><r>hotel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbohuparenda<s n="n"/></l><r>hospedaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mboja'opy<s n="n"/></l><r>partido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mboje'eavýva<s n="n"/></l><r>paradoja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbojaʼopy<s n="n"/></l><r>partido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbojeʼeavýva<s n="n"/></l><r>paradoja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbojoguáva<s n="n"/></l><r>metáfora<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbojojaha<s n="n"/></l><r>regla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbojojaha<s n="n"/></l><r>norma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -815,18 +841,18 @@
       <e><p><l>mbokapu<s n="n"/></l><r>disparo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbokapu<s n="n"/></l><r>petardo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbokapu<s n="n"/></l><r>tiro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mboka'i<s n="n"/></l><r>revólver<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mboka'i<s n="n"/></l><r>pistola<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbokaʼi<s n="n"/></l><r>revólver<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbokaʼi<s n="n"/></l><r>pistola<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbokuaha<s n="n"/></l><r>torno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbopiguasu<s n="n"/></l><r>vampiro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbopuha'aty<s n="n"/></l><r>orquesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbopuhaʼaty<s n="n"/></l><r>orquesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbopukahára<s n="n"/></l><r>payaso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbopya'eha<s n="n"/></l><r>acelerador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbopyaʼeha<s n="n"/></l><r>acelerador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mborayhu<s n="n"/></l><r>amor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mborayhu<s n="n"/></l><r>cariño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mborevi<s n="n"/></l><r>tapir<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbosa'yha<s n="n"/></l><r>tintura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbosa'yha<s n="n"/></l><r>pincel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbosaʼyha<s n="n"/></l><r>tintura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbosaʼyha<s n="n"/></l><r>pincel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbotaha<s n="n"/></l><r>martillo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbotuicháva<s n="n"/></l><r>hipérbole<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbotyha<s n="n"/></l><r>candado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -837,17 +863,17 @@
       <e><p><l>mbotyha<s n="n"/></l><r>llave<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mboveverã<s n="n"/></l><r>hélice<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mboyvegua<s n="n"/></l><r>prefijo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'ehao<s n="n"/></l><r>colegio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'ehao<s n="n"/></l><r>escuela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'ehaogua<s n="n"/></l><r>escolar<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>mbo'ehavete<s n="n"/></l><r>facultad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'ehára<s n="n"/></l><r>profesor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'ehára<s n="n"/></l><r>maestro<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'ekuaahára<s n="n"/></l><r>licenciado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'epy<s n="n"/></l><r>lección<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'esyry<s n="n"/></l><r>curso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'esyry<s n="n"/></l><r>grado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbo'y<s n="n"/></l><r>collar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼehao<s n="n"/></l><r>colegio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼehao<s n="n"/></l><r>escuela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼehaogua<s n="n"/></l><r>escolar<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>mboʼehavete<s n="n"/></l><r>facultad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼehára<s n="n"/></l><r>profesor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼehára<s n="n"/></l><r>maestro<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼekuaahára<s n="n"/></l><r>licenciado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼepy<s n="n"/></l><r>lección<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼesyry<s n="n"/></l><r>curso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼesyry<s n="n"/></l><r>grado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mboʼy<s n="n"/></l><r>collar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbujape<s n="n"/></l><r>pan<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbujape<s n="n"/></l><r>galleta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbujape karai<s n="n"/></l><r>hostia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -864,9 +890,9 @@
       <e><p><l>mbyaipa<s n="n"/></l><r>destrucción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mbyja<s n="n"/></l><r>astro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbyja<s n="n"/></l><r>estrella<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbyja'aty<s n="n"/></l><r>galaxia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbyju'i<s n="n"/></l><r>golondrina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mbyry'ái<s n="n"/></l><r>calor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbyjaʼaty<s n="n"/></l><r>galaxia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbyjuʼi<s n="n"/></l><r>golondrina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mbyryʼái<s n="n"/></l><r>calor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbyte<s n="n"/></l><r>centro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbyte<s n="n"/></l><r>medio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mbytegua<s n="n"/></l><r>central<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -879,14 +905,14 @@
       <e><p><l>membyryru<s n="n"/></l><r>útero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>membyrã<s n="n"/></l><r>parto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>membyrãkuaapy<s n="n"/></l><r>obstetricia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>memby'anga<s n="n"/></l><r>hijastro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>membyʼanga<s n="n"/></l><r>hijastro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>menarã<s n="n"/></l><r>novio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>menasy<s n="n"/></l><r>suegro<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>menda<s n="n"/></l><r>boda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>menda<s n="n"/></l><r>matrimonio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mendasako'i<s n="n"/></l><r>noviazgo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mendasakoʼi<s n="n"/></l><r>noviazgo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>merõ<s n="n"/></l><r>melón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mesa'ao<s n="n"/></l><r>mantel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mesaʼao<s n="n"/></l><r>mantel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>meña<s n="n"/></l><r>sexo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>meña<s n="n"/></l><r>género<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mimbi<s n="n"/></l><r>flauta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -899,25 +925,25 @@
       <e><p><l>mitãkuña<s n="n"/></l><r>niño<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mitãnguéra<s n="n"/></l><r>niñez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mitãpohanohára<s n="n"/></l><r>pediatra<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>mitãra'y<s n="n"/></l><r>bebé<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mitãra'y<s n="n"/></l><r>neonato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mitãra'ãnga<s n="n"/></l><r>muñeca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mitãraʼy<s n="n"/></l><r>bebé<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mitãraʼy<s n="n"/></l><r>neonato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mitãraʼãnga<s n="n"/></l><r>muñeca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mitãreko<s n="n"/></l><r>infancia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mitãrekokuaapy<s n="n"/></l><r>pediatría<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mitãrupa<s n="n"/></l><r>cuna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mitãrusu<s n="n"/></l><r>adolescente<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>mitã'ao<s n="n"/></l><r>pañal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mitã'i<s n="n"/></l><r>nene<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mitãʼao<s n="n"/></l><r>pañal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mitãʼi<s n="n"/></l><r>nene<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>moakãhára<s n="n"/></l><r>director<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>moambue<s n="n"/></l><r>cambio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mokõiha<s n="n"/></l><r>segundo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>momarandu<s n="n"/></l><r>información<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>momarandu<s n="n"/></l><r>publicidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>momaranduha<s n="n"/></l><r>noticiario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mombe'ugua'u<s n="n"/></l><r>mito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mombe'ugua'ukuaa<s n="n"/></l><r>mitología<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mombe'urã<s n="n"/></l><r>cuento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mombe'urã<s n="n"/></l><r>leyenda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mombeʼuguaʼu<s n="n"/></l><r>mito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mombeʼuguaʼukuaa<s n="n"/></l><r>mitología<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>mombeʼurã<s n="n"/></l><r>cuento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mombeʼurã<s n="n"/></l><r>leyenda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mombykypy<s n="n"/></l><r>resumen<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mombyryha<s n="n"/></l><r>lejanía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mombytaha<s n="n"/></l><r>freno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -926,13 +952,13 @@
       <e><p><l>mondaha<s n="n"/></l><r>delincuente<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>mongarukuaahára<s n="n"/></l><r>nutricionista<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>mongoraha<s n="n"/></l><r>muralla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mongu'iha<s n="n"/></l><r>molino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>monguʼiha<s n="n"/></l><r>molino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>morangu<s n="n"/></l><r>fábula<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mosãingoha<s n="n"/></l><r>percha<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>moñandy<s n="n"/></l><r>lubricación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>moñái<s n="n"/></l><r>bandido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mo'ãha<s n="n"/></l><r>toldo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>mo'ãhára<s n="n"/></l><r>abogado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>moʼãha<s n="n"/></l><r>toldo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>moʼãhára<s n="n"/></l><r>abogado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>muanduhe<s n="n"/></l><r>acento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>muanduhe<s n="n"/></l><r>tilde<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>muã<s n="n"/></l><r>luciérnaga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -940,7 +966,7 @@
       <e><p><l>myasãi<s n="n"/></l><r>difusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mymba<s n="n"/></l><r>fauna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mymbapy<s n="n"/></l><r>pata<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mymbara'y<s n="n"/></l><r>pichón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mymbaraʼy<s n="n"/></l><r>pichón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>mymbarekokuaapy<s n="n"/></l><r>zoología<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mymbarenda<s n="n"/></l><r>hacienda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mymbarenda<s n="n"/></l><r>granja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -950,7 +976,7 @@
       <e><p><l>mymbarokái<s n="n"/></l><r>jaula<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mymbavai<s n="n"/></l><r>bestia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>mymbañarõ<s n="n"/></l><r>fiera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>mymba'aty<s n="n"/></l><r>rebaño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>mymbaʼaty<s n="n"/></l><r>rebaño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>máva<s n="n"/></l><r>ser<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ména<s n="n"/></l><r>marido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ména<s n="n"/></l><r>esposo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -969,7 +995,7 @@
       <e><p><l>ogaygua<s n="n"/></l><r>familia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ogaygua<s n="n"/></l><r>pariente<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>ogaykegua<s n="n"/></l><r>vecino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ohasa'asýva<s n="n"/></l><r>víctima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ohasaʼasýva<s n="n"/></l><r>víctima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>oikekuaáva<s n="n"/></l><r>transversal<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>oikeramóva<s n="n"/></l><r>aprendiz<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>oikuaaséva<s n="n"/></l><r>curioso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -995,10 +1021,10 @@
       <e><p><l>ovameméva<s n="n"/></l><r>nómada<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>ovecha<s n="n"/></l><r>oveja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ovecharague<s n="n"/></l><r>lana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ovechara'y<s n="n"/></l><r>cordero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ovecharaʼy<s n="n"/></l><r>cordero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ovetã<s n="n"/></l><r>ventana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ovetã'i<s n="n"/></l><r>ventanilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>oñembo'ýva<s n="n"/></l><r>parado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ovetãʼi<s n="n"/></l><r>ventanilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>oñemboʼýva<s n="n"/></l><r>parado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>paaryjere<s n="n"/></l><r>década<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pahague<s n="n"/></l><r>extremo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pahague<s n="n"/></l><r>final<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1011,26 +1037,26 @@
       <e><p><l>paraguaigua<s n="n"/></l><r>paraguayo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>paraguasu<s n="n"/></l><r>océano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>paray<s n="n"/></l><r>mar<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>pa'i<s n="n"/></l><r>sacerdote<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pa'i<s n="n"/></l><r>cura<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pa'ã<s n="n"/></l><r>obstrucción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>paʼi<s n="n"/></l><r>sacerdote<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>paʼi<s n="n"/></l><r>cura<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>paʼã<s n="n"/></l><r>obstrucción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pejuha<s n="n"/></l><r>pantalla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pejuha<s n="n"/></l><r>ventilador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pejuha<s n="n"/></l><r>abanico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pekue<s n="n"/></l><r>anchura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pepo<s n="n"/></l><r>ala<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pete<s n="n"/></l><r>golpe<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pe'aha<s n="n"/></l><r>abridor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>peʼaha<s n="n"/></l><r>abridor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pichyhára<s n="n"/></l><r>masajista<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>pindo<s n="n"/></l><r>palma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pira<s n="n"/></l><r>pez<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pirakutu<s n="n"/></l><r>pesca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pirapire<s n="n"/></l><r>moneda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pira'i<s n="n"/></l><r>sardina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>piraʼi<s n="n"/></l><r>sardina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pire<s n="n"/></l><r>cáscara<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pire<s n="n"/></l><r>corteza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pire<s n="n"/></l><r>piel<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pire'ape<s n="n"/></l><r>escama<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pireʼape<s n="n"/></l><r>escama<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>piri<s n="n"/></l><r>junco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pitarã<s n="n"/></l><r>cigarrillo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>po<s n="n"/></l><r>mano<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1076,17 +1102,17 @@
       <e><p><l>poyvi<s n="n"/></l><r>tela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>poyvi<s n="n"/></l><r>pabellón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>poyvi guerahaha<s n="n"/></l><r>abanderado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>po'a<s n="n"/></l><r>suerte<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>po'a<s n="n"/></l><r>fortuna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>po'ara'ã<s n="n"/></l><r>lotería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>po'ikue<s n="n"/></l><r>estrechez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>poʼa<s n="n"/></l><r>suerte<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>poʼa<s n="n"/></l><r>fortuna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>poʼaraʼã<s n="n"/></l><r>lotería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>poʼikue<s n="n"/></l><r>estrechez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>puapy<s n="n"/></l><r>triptongo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>puhoe<s n="n"/></l><r>radio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pujoja<s n="n"/></l><r>rima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>puka<s n="n"/></l><r>risa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pukarã<s n="n"/></l><r>chiste<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pukukue<s n="n"/></l><r>longitud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pukukuera'ã<s n="n"/></l><r>metro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pukukueraʼã<s n="n"/></l><r>metro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pukõi<s n="n"/></l><r>diptongo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pumbyry<s n="n"/></l><r>teléfono<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pupu<s n="n"/></l><r>hervor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1095,22 +1121,22 @@
       <e><p><l>purahéi<s n="n"/></l><r>canción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pureko<s n="n"/></l><r>tono<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pureko<s n="n"/></l><r>tonada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>puru'ã<s n="n"/></l><r>ombligo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>puruʼã<s n="n"/></l><r>ombligo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>purãngatu<s n="n"/></l><r>prosodia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pu'ae<s n="n"/></l><r>vocal<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pu'aka<s n="n"/></l><r>poder<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pu'aka<s n="n"/></l><r>fuerza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pu'aka<s n="n"/></l><r>influencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pu'ã<s n="n"/></l><r>reacción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>puʼae<s n="n"/></l><r>vocal<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>puʼaka<s n="n"/></l><r>poder<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>puʼaka<s n="n"/></l><r>fuerza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>puʼaka<s n="n"/></l><r>influencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>puʼã<s n="n"/></l><r>reacción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>py<s n="n"/></l><r>pie<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pyaha<s n="n"/></l><r>trama<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyahu<s n="n"/></l><r>recluta<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pyao<s n="n"/></l><r>media<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pya'e<s n="n"/></l><r>rapidez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pya'e<s n="n"/></l><r>pronto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pya'e<s n="n"/></l><r>ligereza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pya'ekue<s n="n"/></l><r>celeridad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pya'ekue<s n="n"/></l><r>velocidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyaʼe<s n="n"/></l><r>rapidez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyaʼe<s n="n"/></l><r>pronto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyaʼe<s n="n"/></l><r>ligereza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyaʼekue<s n="n"/></l><r>celeridad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyaʼekue<s n="n"/></l><r>velocidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyenda<s n="n"/></l><r>base<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyhare<s n="n"/></l><r>noche<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyharepyte<s n="n"/></l><r>medianoche<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1118,7 +1144,7 @@
       <e><p><l>pyho<s n="n"/></l><r>traspié<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pyhyha<s n="n"/></l><r>perilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pykasu<s n="n"/></l><r>palomo<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pykasu'i<s n="n"/></l><r>tórtola<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pykasuʼi<s n="n"/></l><r>tórtola<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyno<s n="n"/></l><r>ortiga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pypore<s n="n"/></l><r>pista<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyrague<s n="n"/></l><r>espía<s n="n"/></r></p><par n="mf_GD"/></e>
@@ -1126,13 +1152,13 @@
       <e><p><l>pyta<s n="n"/></l><r>talón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pytagua<s n="n"/></l><r>extranjero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pytaha<s n="n"/></l><r>paradero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pyti'a<s n="n"/></l><r>pecho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pyti'achiã<s n="n"/></l><r>asma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pytu'u<s n="n"/></l><r>tregua<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pytu'u<s n="n"/></l><r>recreo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>pytu'u<s n="n"/></l><r>quietud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pytu'u<s n="n"/></l><r>calma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>pytu'u<s n="n"/></l><r>receso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytiʼa<s n="n"/></l><r>pecho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytiʼachiã<s n="n"/></l><r>asma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytuʼu<s n="n"/></l><r>tregua<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytuʼu<s n="n"/></l><r>recreo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytuʼu<s n="n"/></l><r>quietud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytuʼu<s n="n"/></l><r>calma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pytuʼu<s n="n"/></l><r>receso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pytyvõ<s n="n"/></l><r>favor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pytyvõhára<s n="n"/></l><r>mediador<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pytyvõhára<s n="n"/></l><r>secretario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1141,21 +1167,21 @@
       <e><p><l>pytã<s n="n"/></l><r>rojo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>pytã<s n="n"/></l><r>púrpura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pyñuã<s n="n"/></l><r>tobillo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'a<s n="n"/></l><r>estómago<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'a atõi<s n="n"/></l><r>impresión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aguapy<s n="n"/></l><r>paz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aguapy<s n="n"/></l><r>paciencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aguasu<s n="n"/></l><r>fortaleza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aguasu<s n="n"/></l><r>coraje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aguasu<s n="n"/></l><r>osadía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aguasu<s n="n"/></l><r>valentía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'ajere<s n="n"/></l><r>náusea<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'ajokorã<s n="n"/></l><r>merienda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'ara'ã<s n="n"/></l><r>deseo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aro<s n="n"/></l><r>odio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'aro<s n="n"/></l><r>rencor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'arory<s n="n"/></l><r>ventura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>py'avai<s n="n"/></l><r>indigestión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼa<s n="n"/></l><r>estómago<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼa atõi<s n="n"/></l><r>impresión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaguapy<s n="n"/></l><r>paz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaguapy<s n="n"/></l><r>paciencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaguasu<s n="n"/></l><r>fortaleza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaguasu<s n="n"/></l><r>coraje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaguasu<s n="n"/></l><r>osadía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaguasu<s n="n"/></l><r>valentía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼajere<s n="n"/></l><r>náusea<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼajokorã<s n="n"/></l><r>merienda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaraʼã<s n="n"/></l><r>deseo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaro<s n="n"/></l><r>odio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼaro<s n="n"/></l><r>rencor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼarory<s n="n"/></l><r>ventura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>pyʼavai<s n="n"/></l><r>indigestión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>pýra<s n="n"/></l><r>crudo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>rairõrei<s n="n"/></l><r>agresión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>rakykuere<s n="n"/></l><r>pasado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1168,7 +1194,7 @@
       <e><p><l>riregua<s n="n"/></l><r>sufijo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>rokái<s n="n"/></l><r>paréntesis<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>rosã<s n="n"/></l><r>aguante<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ro'y<s n="n"/></l><r>frío<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>roʼy<s n="n"/></l><r>frío<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ruru<s n="n"/></l><r>hinchazón<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ryguasu<s n="n"/></l><r>gallina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ryrýi<s n="n"/></l><r>temblor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1179,20 +1205,20 @@
       <e><p><l>sapatupuku<s n="n"/></l><r>bota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>sapatusã<s n="n"/></l><r>cordón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>sapatuñemuha<s n="n"/></l><r>zapatería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>sapatu'apoha<s n="n"/></l><r>zapatero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>sapy'a<s n="n"/></l><r>rato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>sapy'agua<s n="n"/></l><r>azar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>sapatuʼapoha<s n="n"/></l><r>zapatero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>sapyʼa<s n="n"/></l><r>rato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>sapyʼagua<s n="n"/></l><r>azar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>sarambi<s n="n"/></l><r>desorden<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>savana<s n="n"/></l><r>sábana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>sa'ary<s n="n"/></l><r>siglo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>sa'y<s n="n"/></l><r>color<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>sa'yry<s n="n"/></l><r>pintura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>sa'yry<s n="n"/></l><r>tinta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>saʼary<s n="n"/></l><r>siglo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>saʼy<s n="n"/></l><r>color<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>saʼyry<s n="n"/></l><r>pintura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>saʼyry<s n="n"/></l><r>tinta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>sevoiry<s n="n"/></l><r>ajo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>sevo'i<s n="n"/></l><r>lombriz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>sevoʼi<s n="n"/></l><r>lombriz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>sevói<s n="n"/></l><r>cebolla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>so'o<s n="n"/></l><r>carne<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>so'o'uha<s n="n"/></l><r>carnívoro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>soʼo<s n="n"/></l><r>carne<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>soʼoʼuha<s n="n"/></l><r>carnívoro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>sunu<s n="n"/></l><r>trueno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>sy<s n="n"/></l><r>madre<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>sy<s n="n"/></l><r>mamá<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1235,8 +1261,8 @@
       <e><p><l>tape<s n="n"/></l><r>trayecto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tapejere<s n="n"/></l><r>circuito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tapembyky<s n="n"/></l><r>atajo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tapepo'i<s n="n"/></l><r>sendero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tapepo'i<s n="n"/></l><r>senda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tapepoʼi<s n="n"/></l><r>sendero<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tapepoʼi<s n="n"/></l><r>senda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tapepuku<s n="n"/></l><r>ruta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tapere<s n="n"/></l><r>ruina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tapereko<s n="n"/></l><r>vial<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1269,25 +1295,25 @@
       <e><p><l>tavaguasu<s n="n"/></l><r>capital<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tavaguasu<s n="n"/></l><r>urbe<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tavao<s n="n"/></l><r>municipalidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tava'i<s n="n"/></l><r>barrio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tava'i<s n="n"/></l><r>distrito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tavaʼi<s n="n"/></l><r>barrio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tavaʼi<s n="n"/></l><r>distrito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>taviju<s n="n"/></l><r>vello<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tavy<s n="n"/></l><r>demente<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>tavy<s n="n"/></l><r>cretino<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tañykã<s n="n"/></l><r>mentón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tañykã<s n="n"/></l><r>quijada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'angagua'u<s n="n"/></l><r>caricatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'angarenda<s n="n"/></l><r>cuadro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'angaryru<s n="n"/></l><r>álbum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ã<s n="n"/></l><r>medida<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãha<s n="n"/></l><r>medidor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãnga<s n="n"/></l><r>estampa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãnga<s n="n"/></l><r>imagen<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãnga<s n="n"/></l><r>figura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãnga<s n="n"/></l><r>fotografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãngambyry<s n="n"/></l><r>televisión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ãnga'i<s n="n"/></l><r>maqueta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ta'ýra<s n="n"/></l><r>vástago<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼangaguaʼu<s n="n"/></l><r>caricatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼangarenda<s n="n"/></l><r>cuadro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼangaryru<s n="n"/></l><r>álbum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼã<s n="n"/></l><r>medida<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãha<s n="n"/></l><r>medidor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãnga<s n="n"/></l><r>estampa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãnga<s n="n"/></l><r>imagen<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãnga<s n="n"/></l><r>figura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãnga<s n="n"/></l><r>fotografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãngambyry<s n="n"/></l><r>televisión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼãngaʼi<s n="n"/></l><r>maqueta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>taʼýra<s n="n"/></l><r>vástago<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>techahára<s n="n"/></l><r>público<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>techapyrã<s n="n"/></l><r>ejemplo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>techaukaha<s n="n"/></l><r>síntoma<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1319,12 +1345,12 @@
       <e><p><l>tekokuaa<s n="n"/></l><r>razón<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekokyra<s n="n"/></l><r>obesidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekomarãngatu<s n="n"/></l><r>virtud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tekombo'e<s n="n"/></l><r>enseñanza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tekomboʼe<s n="n"/></l><r>enseñanza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekoporã<s n="n"/></l><r>ética<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tekopu'ã<s n="n"/></l><r>rebeldía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tekopuʼã<s n="n"/></l><r>rebeldía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekopy<s n="n"/></l><r>estructura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekopyahu<s n="n"/></l><r>juventud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tekora'ã<s n="n"/></l><r>parodia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tekoraʼã<s n="n"/></l><r>parodia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekosãso<s n="n"/></l><r>libertad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekovai<s n="n"/></l><r>lacra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tekove<s n="n"/></l><r>individuo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1340,13 +1366,13 @@
       <e><p><l>tekoyma<s n="n"/></l><r>tradición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembe<s n="n"/></l><r>labio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>temberague<s n="n"/></l><r>bigote<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembe'y<s n="n"/></l><r>borde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembe'y<s n="n"/></l><r>margen<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>tembe'y<s n="n"/></l><r>orilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembe'y<s n="n"/></l><r>litoral<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembe'y<s n="n"/></l><r>costa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembe'y<s n="n"/></l><r>ribera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembe'y rechaukaha<s n="n"/></l><r>mojón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembeʼy<s n="n"/></l><r>borde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembeʼy<s n="n"/></l><r>margen<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>tembeʼy<s n="n"/></l><r>orilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembeʼy<s n="n"/></l><r>litoral<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembeʼy<s n="n"/></l><r>costa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembeʼy<s n="n"/></l><r>ribera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembeʼy rechaukaha<s n="n"/></l><r>mojón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiapo<s n="n"/></l><r>faena<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiapo<s n="n"/></l><r>labor<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiapo<s n="n"/></l><r>obra<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1361,9 +1387,9 @@
       <e><p><l>tembiaporã<s n="n"/></l><r>tarea<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiaporã<s n="n"/></l><r>obligación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiapoukapy<s n="n"/></l><r>mandato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembiasagua'u<s n="n"/></l><r>novela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembiasaguaʼu<s n="n"/></l><r>novela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiasakue<s n="n"/></l><r>historia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembiasa'asy<s n="n"/></l><r>padecimiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembiasaʼasy<s n="n"/></l><r>padecimiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiasyeta<s n="n"/></l><r>tragedia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiechapy<s n="n"/></l><r>maravilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembiechauka<s n="n"/></l><r>exposición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1384,19 +1410,19 @@
       <e><p><l>tembipotarei<s n="n"/></l><r>capricho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembipotarei<s n="n"/></l><r>antojo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembireko<s n="n"/></l><r>esposo<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembi'u<s n="n"/></l><r>sustento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tembi'upyhare<s n="n"/></l><r>cena<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembiʼu<s n="n"/></l><r>sustento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tembiʼupyhare<s n="n"/></l><r>cena<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tembyre<s n="n"/></l><r>saldo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembyre<s n="n"/></l><r>residuo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembyre<s n="n"/></l><r>remanente<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tembyre<s n="n"/></l><r>resto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>temiandu<s n="n"/></l><r>sentimiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>temiarirõ<s n="n"/></l><r>nieto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>temimbo'e<s n="n"/></l><r>alumno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>temimo'ã<s n="n"/></l><r>pensamiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>temimo'ã<s n="n"/></l><r>opinión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>temimo'ã<s n="n"/></l><r>objetivo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>temimo'ã<s n="n"/></l><r>idea<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>temimboʼe<s n="n"/></l><r>alumno<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>temimoʼã<s n="n"/></l><r>pensamiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>temimoʼã<s n="n"/></l><r>opinión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>temimoʼã<s n="n"/></l><r>objetivo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>temimoʼã<s n="n"/></l><r>idea<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tenda<s n="n"/></l><r>paraje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tenda<s n="n"/></l><r>sede<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tenda<s n="n"/></l><r>localidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1413,7 +1439,7 @@
       <e><p><l>tenonderã<s n="n"/></l><r>futuro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tenonderãgua<s n="n"/></l><r>porvenir<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tenondeterã<s n="n"/></l><r>prioridad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tenypy'ã<s n="n"/></l><r>rodilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tenypyʼã<s n="n"/></l><r>rodilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tepoti<s n="n"/></l><r>mierda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tepoti<s n="n"/></l><r>excremento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tepy<s n="n"/></l><r>valor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1428,7 +1454,7 @@
       <e><p><l>terakuã<s n="n"/></l><r>notable<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>terakuãporã<s n="n"/></l><r>honor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>terarangue<s n="n"/></l><r>pronombre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>terara'ãnga<s n="n"/></l><r>logotipo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>teraraʼãnga<s n="n"/></l><r>logotipo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>terarenda<s n="n"/></l><r>rótulo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>terarysýi<s n="n"/></l><r>matrícula<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>terarysýi<s n="n"/></l><r>nómina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1450,11 +1476,11 @@
       <e><p><l>teta<s n="n"/></l><r>multitud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>teta<s n="n"/></l><r>abundancia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tete<s n="n"/></l><r>cuerpo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>teteku'e<s n="n"/></l><r>gimnasia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>teteku'e<s n="n"/></l><r>ejercicio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tetekuʼe<s n="n"/></l><r>gimnasia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tetekuʼe<s n="n"/></l><r>ejercicio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tetepyecha<s n="n"/></l><r>ecografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tetera'ãnga<s n="n"/></l><r>molde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tetera'ãngahai<s n="n"/></l><r>tomografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>teteraʼãnga<s n="n"/></l><r>molde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>teteraʼãngahai<s n="n"/></l><r>tomografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>teteñeñangareko<s n="n"/></l><r>inmunización<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tetymakangue<s n="n"/></l><r>tibia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tetymakangue<s n="n"/></l><r>peroné<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1463,7 +1489,7 @@
       <e><p><l>tetã<s n="n"/></l><r>nación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tetãgua<s n="n"/></l><r>civil<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>tetãgua<s n="n"/></l><r>nativo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tetãmba'éva<s n="n"/></l><r>oficial<s n="n"/></r></p><par n="mf_GD"/></e>
+      <e><p><l>tetãmbaʼéva<s n="n"/></l><r>oficial<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>tetãpysokue<s n="n"/></l><r>territorio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tetãreko<s n="n"/></l><r>nacionalidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tetãygua<s n="n"/></l><r>compatriota<s n="n"/></r></p><par n="mf_GD"/></e>
@@ -1471,15 +1497,15 @@
       <e><p><l>teñoiha<s n="n"/></l><r>yacimiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>teñói<s n="n"/></l><r>nacimiento<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>teñói<s n="n"/></l><r>germen<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>te'õngue<s n="n"/></l><r>cadáver<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>te'õreko<s n="n"/></l><r>humedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>teʼõngue<s n="n"/></l><r>cadáver<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>teʼõreko<s n="n"/></l><r>humedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tiri<s n="n"/></l><r>grieta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>titi<s n="n"/></l><r>mama<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>togue<s n="n"/></l><r>página<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>togue<s n="n"/></l><r>hoja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tope<s n="n"/></l><r>pétalo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>topea<s n="n"/></l><r>pestaña<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>torora'y<s n="n"/></l><r>novillo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tororaʼy<s n="n"/></l><r>novillo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tory<s n="n"/></l><r>humor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tory<s n="n"/></l><r>simpatía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tory<s n="n"/></l><r>gozo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1489,15 +1515,15 @@
       <e><p><l>tova<s n="n"/></l><r>cara<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tovaja<s n="n"/></l><r>cuñado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tovapire<s n="n"/></l><r>cutis<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
-      <e><p><l>tovara'ãnga<s n="n"/></l><r>máscara<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tovaraʼãnga<s n="n"/></l><r>máscara<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tovayke<s n="n"/></l><r>mejilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tove<s n="n"/></l><r>negación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>to'ysã<s n="n"/></l><r>fresco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>toʼysã<s n="n"/></l><r>fresco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tugua<s n="n"/></l><r>fondo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tugua<s n="n"/></l><r>rincón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tuguy<s n="n"/></l><r>sangre<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tuguykangy<s n="n"/></l><r>anemia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tuguy'uha<s n="n"/></l><r>parásito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tuguyʼuha<s n="n"/></l><r>parásito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tuichakue<s n="n"/></l><r>magnitud<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tuichakue<s n="n"/></l><r>tamaño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tujakue<s n="n"/></l><r>vejez<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1515,12 +1541,12 @@
       <e><p><l>tupa<s n="n"/></l><r>lecho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tupahoja<s n="n"/></l><r>colcha<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tupã<s n="n"/></l><r>dios<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>tupãmba'e<s n="n"/></l><r>limosna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tupãmba'ejára<s n="n"/></l><r>mendigo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tupãmbaʼe<s n="n"/></l><r>limosna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tupãmbaʼejára<s n="n"/></l><r>mendigo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tupão<s n="n"/></l><r>templo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tupão<s n="n"/></l><r>iglesia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tupãoguasu<s n="n"/></l><r>catedral<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tupão'i<s n="n"/></l><r>capilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tupãoʼi<s n="n"/></l><r>capilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tupãrayhu<s n="n"/></l><r>devoción<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tupãreko<s n="n"/></l><r>religión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tupãreko<s n="n"/></l><r>divinidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1528,7 +1554,7 @@
       <e><p><l>tuvajukaha<s n="n"/></l><r>parricida<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>tuvanga<s n="n"/></l><r>padrastro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tuã<s n="n"/></l><r>cumbre<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tu'ã<s n="n"/></l><r>cima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>tuʼã<s n="n"/></l><r>cima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ty<s n="n"/></l><r>orina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tyakuã<s n="n"/></l><r>aroma<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tyakuã<s n="n"/></l><r>olor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1560,7 +1586,7 @@
       <e><p><l>tysýi<s n="n"/></l><r>serie<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tytýi<s n="n"/></l><r>latido<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>tyvyta<s n="n"/></l><r>ceja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ty'ãi<s n="n"/></l><r>gancho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>tyʼãi<s n="n"/></l><r>gancho<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>táva<s n="n"/></l><r>comunidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>táva<s n="n"/></l><r>municipio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>táva rehegua<s n="n"/></l><r>urbano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1569,7 +1595,7 @@
       <e><p><l>tãinguéra<s n="n"/></l><r>dentadura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>tãipohanohára<s n="n"/></l><r>dentista<s n="n"/></r></p><par n="mf_GD"/></e>
       <e><p><l>tãirekokuaa<s n="n"/></l><r>odontología<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>tãi'ai<s n="n"/></l><r>caries<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
+      <e><p><l>tãiʼai<s n="n"/></l><r>caries<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>téra<s n="n"/></l><r>nombre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>túva<s n="n"/></l><r>padre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>túva<s n="n"/></l><r>papá<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1581,7 +1607,7 @@
       <e><p><l>vakapi<s n="n"/></l><r>suela<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>vava<s n="n"/></l><r>vaivén<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>verapy<s n="n"/></l><r>gloria<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>virumono'õ<s n="n"/></l><r>lucro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>virumonoʼõ<s n="n"/></l><r>lucro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>viruporu<s n="n"/></l><r>crédito<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>viruporukuaa<s n="n"/></l><r>inversión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>virureko<s n="n"/></l><r>economía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1591,8 +1617,8 @@
       <e><p><l>votõkua<s n="n"/></l><r>ojal<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>vyrorei<s n="n"/></l><r>tontería<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>vyroreko<s n="n"/></l><r>necedad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>vy'a<s n="n"/></l><r>placer<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>vy'a<s n="n"/></l><r>júbilo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>vyʼa<s n="n"/></l><r>placer<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>vyʼa<s n="n"/></l><r>júbilo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yatã<s n="n"/></l><r>hielo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yga<s n="n"/></l><r>nave<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yga<s n="n"/></l><r>bote<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1603,7 +1629,7 @@
       <e><p><l>ygapytaha<s n="n"/></l><r>muelle<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ygarata<s n="n"/></l><r>barco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ygary<s n="n"/></l><r>cedro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yga'aty<s n="n"/></l><r>flota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ygaʼaty<s n="n"/></l><r>flota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ygua<s n="n"/></l><r>infusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ygue<s n="n"/></l><r>espiga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ygue<s n="n"/></l><r>mástil<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1613,11 +1639,11 @@
       <e><p><l>ykyrã<s n="n"/></l><r>perfil<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ymaguare<s n="n"/></l><r>reliquia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ynambu<s n="n"/></l><r>perdiz<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yno'õ<s n="n"/></l><r>laguna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yno'õngue<s n="n"/></l><r>estanque<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ynoʼõ<s n="n"/></l><r>laguna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ynoʼõngue<s n="n"/></l><r>estanque<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ypa<s n="n"/></l><r>lago<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ype<s n="n"/></l><r>pato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ypu'ã<s n="n"/></l><r>ola<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ypuʼã<s n="n"/></l><r>ola<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ypy<s n="n"/></l><r>linde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ypy<s n="n"/></l><r>principio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ypykue<s n="n"/></l><r>antepasado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1626,7 +1652,7 @@
       <e><p><l>ypykue<s n="n"/></l><r>génesis<s n="n"/><s n="sp"/></r></p><par n="mf_GD"/></e>
       <e><p><l>ypykue<s n="n"/></l><r>linaje<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ypykue<s n="n"/></l><r>aborigen<s n="n"/></r></p><par n="mf_GD"/></e>
-      <e><p><l>ypykue'aty<s n="n"/></l><r>tribu<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ypykueʼaty<s n="n"/></l><r>tribu<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yryvu<s n="n"/></l><r>cuervo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yryvu<s n="n"/></l><r>buitre<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ysapy<s n="n"/></l><r>rocío<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1641,7 +1667,7 @@
       <e><p><l>yuhéi<s n="n"/></l><r>sed<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yva<s n="n"/></l><r>fruta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yva<s n="n"/></l><r>manzana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvasa'i<s n="n"/></l><r>moro<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvasaʼi<s n="n"/></l><r>moro<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvate<s n="n"/></l><r>norte<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvate<s n="n"/></l><r>altura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvatejoja<s n="n"/></l><r>nivel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1664,7 +1690,7 @@
       <e><p><l>yvykua pypuku<s n="n"/></l><r>abismo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvykuapuku<s n="n"/></l><r>túnel<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvykuapypuku<s n="n"/></l><r>precipicio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvyku'i<s n="n"/></l><r>arena<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvykuʼi<s n="n"/></l><r>arena<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvymoporãha<s n="n"/></l><r>abono<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvype<s n="n"/></l><r>llanura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvype<s n="n"/></l><r>meseta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1672,15 +1698,15 @@
       <e><p><l>yvypóra reko<s n="n"/></l><r>humanidad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyra<s n="n"/></l><r>árbol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyra<s n="n"/></l><r>madera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvyraku'i<s n="n"/></l><r>astilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyrakuʼi<s n="n"/></l><r>astilla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrapuku<s n="n"/></l><r>palo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrapuku<s n="n"/></l><r>columna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrarakã<s n="n"/></l><r>tallo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrarykue<s n="n"/></l><r>savia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvyrañembo'y<s n="n"/></l><r>poste<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvyra'akua<s n="n"/></l><r>estaca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvyra'ãnga<s n="n"/></l><r>mapa<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvyra'ãngahai<s n="n"/></l><r>topografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyrañemboʼy<s n="n"/></l><r>poste<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyraʼakua<s n="n"/></l><r>estaca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyraʼãnga<s n="n"/></l><r>mapa<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyraʼãngahai<s n="n"/></l><r>topografía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrei<s n="n"/></l><r>inmueble<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrei<s n="n"/></l><r>terraplén<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyrekokuaa<s n="n"/></l><r>geología<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1689,18 +1715,18 @@
       <e><p><l>yvytujokoha<s n="n"/></l><r>parabrisas<s n="n"/><s n="m"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>yvytukangy<s n="n"/></l><r>brisa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvytupochy<s n="n"/></l><r>tormenta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvytu'atã<s n="n"/></l><r>ciclón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvytu'atã<s n="n"/></l><r>vendaval<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvytuʼatã<s n="n"/></l><r>ciclón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvytuʼatã<s n="n"/></l><r>vendaval<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyty<s n="n"/></l><r>montaña<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyty<s n="n"/></l><r>cerro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvytymi<s n="n"/></l><r>loma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvytyty<s n="n"/></l><r>serranía<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>yvyvore<s n="n"/></l><r>hemisferio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvy'a<s n="n"/></l><r>tubérculo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>yvy'apu'a<s n="n"/></l><r>planeta<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyʼa<s n="n"/></l><r>tubérculo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yvyʼapuʼa<s n="n"/></l><r>planeta<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvága<s n="n"/></l><r>cielo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>yvága<s n="n"/></l><r>paraíso<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>y'uha<s n="n"/></l><r>jarro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>yʼuha<s n="n"/></l><r>jarro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ánga<s n="n"/></l><r>alma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ára<s n="n"/></l><r>tiempo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ára<s n="n"/></l><r>día<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1723,42 +1749,42 @@
       <e><p><l>ñangarekohára<s n="n"/></l><r>guarda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñangarekorã<s n="n"/></l><r>patrulla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñaña<s n="n"/></l><r>villano<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ña'embe<s n="n"/></l><r>plato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñeha'arõ<s n="n"/></l><r>espera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñeha'ãpaha<s n="n"/></l><r>sentencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñaʼembe<s n="n"/></l><r>plato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñehaʼarõ<s n="n"/></l><r>espera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñehaʼãpaha<s n="n"/></l><r>sentencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñehunga<s n="n"/></l><r>contusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñeimo'ãrei<s n="n"/></l><r>imaginación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñeimoʼãrei<s n="n"/></l><r>imaginación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñeipytyvõ<s n="n"/></l><r>palanca<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñekarãi<s n="n"/></l><r>rasguño<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñekundaha<s n="n"/></l><r>turismo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemba'eporandu<s n="n"/></l><r>encuesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñembaʼeporandu<s n="n"/></l><r>encuesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembohasa<s n="n"/></l><r>tráfico<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembohovái<s n="n"/></l><r>respuesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembohovái<s n="n"/></l><r>oposición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembohovái<s n="n"/></l><r>protesta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemboja'o<s n="n"/></l><r>división<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñembokaria'y<s n="n"/></l><r>alarde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñembojaʼo<s n="n"/></l><r>división<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñembokariaʼy<s n="n"/></l><r>alarde<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembosaraiha<s n="n"/></l><r>juguete<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembosarái<s n="n"/></l><r>torneo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembosarái<s n="n"/></l><r>juego<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembotavy<s n="n"/></l><r>pretexto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembotuicha<s n="n"/></l><r>orgullo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñembo'e<s n="n"/></l><r>oración<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñembo'e<s n="n"/></l><r>plegaria<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñembo'e<s n="n"/></l><r>ruego<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñembo'erysýi<s n="n"/></l><r>rosario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemboʼe<s n="n"/></l><r>oración<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemboʼe<s n="n"/></l><r>plegaria<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemboʼe<s n="n"/></l><r>ruego<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemboʼerysýi<s n="n"/></l><r>rosario<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembyasy<s n="n"/></l><r>lástima<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembyasy<s n="n"/></l><r>tristeza<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñembyaty<s n="n"/></l><r>aglomeración<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemi<s n="n"/></l><r>secreto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemoambue<s n="n"/></l><r>transición<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemoha'eño<s n="n"/></l><r>soledad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemohaʼeño<s n="n"/></l><r>soledad<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemohenda<s n="n"/></l><r>orden<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemohu'ã<s n="n"/></l><r>conclusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemohuʼã<s n="n"/></l><r>conclusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemokãha<s n="n"/></l><r>toalla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemomandu'a<s n="n"/></l><r>mención<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemomanduʼa<s n="n"/></l><r>mención<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemomarandu<s n="n"/></l><r>advertencia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemombe'u'i<s n="n"/></l><r>anécdota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemombeʼuʼi<s n="n"/></l><r>anécdota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemombyky<s n="n"/></l><r>síntesis<s n="n"/><s n="f"/><s n="sp"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemomýi<s n="n"/></l><r>trajín<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemonda<s n="n"/></l><r>estafa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
@@ -1771,7 +1797,7 @@
       <e><p><l>ñemu<s n="n"/></l><r>venta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemu<s n="n"/></l><r>negocio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemuha<s n="n"/></l><r>tienda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñemuha'i<s n="n"/></l><r>quiosco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñemuhaʼi<s n="n"/></l><r>quiosco<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemurenda<s n="n"/></l><r>mercado<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemyasãi<s n="n"/></l><r>expansión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñemyengovia<s n="n"/></l><r>trueque<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1779,18 +1805,18 @@
       <e><p><l>ñemyrõ<s n="n"/></l><r>ofensa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñenupã<s n="n"/></l><r>tortura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñenupã tukumbópe<s n="n"/></l><r>latigazo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñepia'ã<s n="n"/></l><r>tesón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñepiaʼã<s n="n"/></l><r>tesón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñepohano<s n="n"/></l><r>maleficio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñepohãno<s n="n"/></l><r>medicación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñepu'ã<s n="n"/></l><r>rebelión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñepuʼã<s n="n"/></l><r>rebelión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñepysãnga<s n="n"/></l><r>tropezón<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñeñandu<s n="n"/></l><r>sensación<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñeñangareko<s n="n"/></l><r>protección<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñeñani<s n="n"/></l><r>carrera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñeñongatuha<s n="n"/></l><r>museo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñe'ãsoro<s n="n"/></l><r>infarto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñe'ê<s n="n"/></l><r>vocablo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
-      <e><p><l>ñoha'ãnga<s n="n"/></l><r>teatro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñeʼãsoro<s n="n"/></l><r>infarto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñeʼê<s n="n"/></l><r>vocablo<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+      <e><p><l>ñohaʼãnga<s n="n"/></l><r>teatro<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ñombohovái<s n="n"/></l><r>discusión<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñomongeta<s n="n"/></l><r>charla<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>ñomongetaha<s n="n"/></l><r>locutorio<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
@@ -1831,6 +1857,14 @@
       <e><p><l>rembirekorã<s n="n"/></l><r>novia<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
       <e><p><l>rykeʼýra<s n="n"/></l><r>hermano mayor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
       <e><p><l>ryvýra<s n="n"/></l><r>hermano menor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+
+      <!-- SECTION: Nombres propios -->
+      <e><p><l>Paraguái<s n="np"/><s n="top"/></l><r>Paraguay<s n="np"/><s n="loc"/></r></p></e>
+
+      <!-- SECTION: Adjetivos -->
+
+      <e><p><l>tee<s n="adj"/></l><r>típico<s n="adj"/></r></p><par n="adj_GD|ND"/></e>
+      <e><p><l>tee<s n="adj"/></l><r>propio<s n="adj"/></r></p><par n="adj_GD|ND"/></e>
 
       <!-- SECTION: Verbs -->
       <e><p><l>me<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
@@ -3802,10 +3836,9 @@
     <e><p><l>ñyñýi<s n="v"/><s n="iv"/></l><r>marchitarse<s n="vblex"/></r></p></e>
     <e><p><l>g̃uahe<s n="v"/><s n="iv"/></l><r>llegar<s n="vblex"/></r></p></e>
     <e><p><l>g̃uahẽ<s n="v"/><s n="iv"/></l><r>llegar<s n="vblex"/></r></p></e>
-    <e><p><l><s n="v"/><s n="iv"/></l><r><s n="vblex"/></r></p></e>
-    <e><p><l><s n="v"/><s n="iv"/></l><r><s n="vblex"/></r></p></e>
-    <e><p><l><s n="v"/><s n="iv"/></l><r><s n="vblex"/></r></p></e>
       
+      <e><p><l>haʼe<s n="vbser"/><s n="iv"/></l><r>ser<s n="vbser"/></r></p></e>
+
       <!-- SECTION: Pronouns -->
       <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>re<s n="prn"/></l><r>tú<s n="prn"/><s n="tn"/></r></p></e>
@@ -3816,11 +3849,11 @@
       <!-- SECTION: Personal Pronouns -->
       <e><p><l>ché<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>ndé<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></l><r>tú<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ha'e<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>el<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>haʼe<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>el<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>ñandé<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>oré<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/></l><r>nosotros<s n="pers"/><s n="tn"/></r></p></e>
       <e><p><l>peẽ<s n="prn"/><s n="pers"/><s n="p2"/><s n="pl"/></l><r>vosotros<s n="pers"/><s n="tn"/></r></p></e>
-      <e><p><l>ha'ekuéra<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>ellos<s n="pers"/><s n="tn"/></r></p></e>
+      <e><p><l>haʼekuéra<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>ellos<s n="pers"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Possesive pronouns -->
       <e><p><l>i<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>su<s n="pos"/><s n="tn"/></r></p></e>
@@ -3830,13 +3863,13 @@
       <e><p><l>ñande<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>ore<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
       <e><p><l>pende<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>chemba'e<s n="prn"/><s n="pos"/><s n="p1"/><s n="sg"/></l><r>mío<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>nemba'e<s n="prn"/><s n="pos"/><s n="p2"/><s n="sg"/></l><r>tuyo<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>imba'e<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>suyo<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>ñanemba'e<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>oremba'e<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>penemba'e<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
-      <e><p><l>imba'ekuéra<s n="prn"/><s n="pos"/><s n="p3"/><s n="pl"/></l><r>suyo<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>chembaʼe<s n="prn"/><s n="pos"/><s n="p1"/><s n="sg"/></l><r>mío<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>nembaʼe<s n="prn"/><s n="pos"/><s n="p2"/><s n="sg"/></l><r>tuyo<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>imbaʼe<s n="prn"/><s n="pos"/><s n="p3"/><s n="sg"/></l><r>suyo<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>ñanembaʼe<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>orembaʼe<s n="prn"/><s n="pos"/><s n="p1"/><s n="pl"/></l><r>nuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>penembaʼe<s n="prn"/><s n="pos"/><s n="p2"/><s n="pl"/></l><r>vuestro<s n="pos"/><s n="tn"/></r></p></e>
+      <e><p><l>imbaʼekuéra<s n="prn"/><s n="pos"/><s n="p3"/><s n="pl"/></l><r>suyo<s n="pos"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Proclitics -->
       <e><p><l>che<s n="prn"/><s n="pro"/><s n="p1"/><s n="sg"/><s n="acc"/></l><r>me<s n="pro"/><s n="tn"/></r></p></e>
@@ -3850,6 +3883,7 @@
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
       <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
+      <e><re>[0-9]+</re>          <p><l><s n="num"/></l>  <r><s n="num"/></r></p></e>
    </section>
 </dictionary>
 
