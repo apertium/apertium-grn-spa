@@ -9,11 +9,23 @@
       <cat-item tags="adj"/>
       <cat-item tags="adj.*"/>
     </def-cat>
+    <def-cat n="tetã">
+      <cat-item lemma="tetã" tags="n"/>
+    </def-cat>
     <def-cat n="ary">
       <cat-item lemma="ary" tags="n"/>
     </def-cat>
+    <def-cat n="top">
+      <cat-item tags="np.top"/>
+    </def-cat>
+    <def-cat n="r-det">
+      <cat-item lemma="r" tags="det"/>
+    </def-cat>
     <def-cat n="num">
       <cat-item tags="num"/>
+    </def-cat>
+    <def-cat n="vbser">
+      <cat-item tags="vbser.iv.pres"/>
     </def-cat>
     <def-cat n="post">
       <cat-item tags="post"/>
@@ -2394,6 +2406,52 @@
             <b pos="2"/>
             <lu>
               <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: top tetã post">
+      <pattern>
+        <pattern-item n="top"/>
+        <pattern-item n="r-det"/>
+        <pattern-item n="tetã"/>
+        <pattern-item n="post"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="pr_top" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SP"/></tag>
+            </tags>
+            <lu>
+              <clip pos="4" side="tl" part="whole"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: vbser">
+      <pattern>
+        <pattern-item n="vbser"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="cop" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="COP.pri.p3.sg"/></tag>
+            </tags>
+            <lu>
+              <lit v="ser"/>
+              <lit-tag v="vbser.pri.p3.4"/>
             </lu>
           </chunk>
         </out>
