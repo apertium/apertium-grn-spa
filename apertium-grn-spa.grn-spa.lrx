@@ -5,10 +5,8 @@
   -->
 
   <rule>
-    <match lemma="wind"/>
-    <match lemma="power" tags="n.*">
-      <select lemma="energía" tags="n.*"/>
-    </match>
+    <match lemma="ñeʼẽ"/>
+    <match lemma="tee" tags="adj"><select lemma="propio" tags="adj.*"/></match>
   </rule>
 </rules>
 

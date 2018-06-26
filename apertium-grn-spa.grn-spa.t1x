@@ -2351,6 +2351,8 @@
   </section-def-macros>
 
   <section-rules>
+    <!-- SECTION: Sintagmas nominales -->
+
     <rule comment="REGLA: nom adj">
       <pattern>
         <pattern-item n="nom"/>
@@ -2379,6 +2381,8 @@
         </out>
       </action>
     </rule>
+
+    <!-- SECTION: Reglas lexicalizadas de sintagmas adposicionales -->
 
     <rule comment="REGLA: ary num post → post el año num">
       <pattern>
@@ -2412,8 +2416,7 @@
       </action>
     </rule>
 
-
-    <rule comment="REGLA: top tetã post">
+    <rule comment="REGLA: top r-det tetã post → post top">
       <pattern>
         <pattern-item n="top"/>
         <pattern-item n="r-det"/>
@@ -2438,6 +2441,7 @@
       </action>
     </rule>
 
+    <!-- SECTION: Sintagmas verbales -->
 
     <rule comment="REGLA: vbser">
       <pattern>
@@ -2458,6 +2462,8 @@
       </action>
     </rule>
 
+
+    <!-- SECTION: Puntuación -->
 
     <rule comment="REGLA: SENT">
       <pattern>
