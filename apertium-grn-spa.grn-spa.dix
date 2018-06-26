@@ -22,6 +22,7 @@
     <sdef n="adj"             c="Adjective"/>
     <sdef n="barb"            c="Barbarismo"/>
     <sdef n="prn"             c="Pronoun"/>
+    <sdef n="subs"             c="Substantiviser"/>
     <sdef n="pro"             c="Proclitic"/>
 
     <sdef n="attr"            c="Attributive"/>
@@ -131,6 +132,8 @@
 
    </pardefs>
    <section id="main" type="standard">
+      <!-- SECTION: Miscellaneous -->
+      <e r="LR"><p><l>va<s n="subs"/></l><r></r></p></e>
 
       <!-- SECTION: Conjunciones -->
       <e><p><l>ha<s n="cnjcoo"/></l><r>y<s n="cnjcoo"/></r></p></e>
