@@ -2,7 +2,37 @@
 <transfer default="chunk">
   <section-def-cats>
     <def-cat n="nom">
+      <cat-item tags="n"/>
       <cat-item tags="n.*"/>
+    </def-cat>
+    <def-cat n="adj">
+      <cat-item tags="adj"/>
+      <cat-item tags="adj.*"/>
+    </def-cat>
+    <def-cat n="top">
+      <cat-item tags="np.top"/>
+    </def-cat>
+    <def-cat n="r-det">
+      <cat-item lemma="r" tags="det"/>
+    </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num"/>
+    </def-cat>
+    <def-cat n="vbser">
+      <cat-item tags="vbser.iv.pres"/>
+    </def-cat>
+    <def-cat n="post">
+      <cat-item tags="post"/>
+    </def-cat>
+    <def-cat n="kuéra">
+      <cat-item lemma="kuéra" tags="pl"/>
+      <cat-item lemma="kuéra" tags="det.pl"/>
+    </def-cat>
+    <def-cat n="tetã">
+      <cat-item lemma="tetã" tags="n"/>
+    </def-cat>
+    <def-cat n="ary">
+      <cat-item lemma="ary" tags="n"/>
     </def-cat>
     <def-cat n="sent">
       <cat-item tags="sent"/>
@@ -10,25 +40,2459 @@
   </section-def-cats>
 
   <section-def-attrs>
+    <def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
     <def-attr n="a_cas">
       <attr-item tags="nom"/>
     </def-attr>
   </section-def-attrs>
 
   <section-def-vars>
-    <def-var n="number"/>
+    <def-var n="nbr_chunk"/>
+    <def-var n="gen_chunk"/>
+    <def-var n="paraula1"/>
   </section-def-vars>
 
   <section-def-macros>
-    <def-macro n="test" npar="1">
-          <let>
-            <var n="number"/>
-            <lit v=""/>
-          </let>
+
+
+    <def-macro n="f_concord2" npar="2"><!--1 = main parameter (typically noun); 2 = secondary parameter (typically adj or det) -->
+      <let>
+	<var n="gen_chunk"/>
+	<lit v=""/>
+      </let>
+      <let>
+	<var n="nbr_chunk"/>
+	<lit v=""/>
+      </let>
+      <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+	<when>
+	  <test>
+	    <equal>
+	      <clip pos="2" side="tl" part="a_num"/>
+	      <lit v=""/>
+	    </equal>
+	  </test>
+	  <choose><!--si no te valor per a gènere i , per tant, tampoc per a nombre: -->
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="2" side="tl" part="a_gen"/>
+		  <lit v=""/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="paraula1"/>
+		<clip pos="2" side="tl" part="lemh"/>
+	      </let>
+	      <append n="paraula1">
+		<clip pos="2" side="tl" part="tags"/>
+		<lit-tag v="GD"/>
+		<lit-tag v="ND"/>
+		<clip pos="2" side="tl" part="lemq"/>
+	      </append>
+	      <let>
+		<clip pos="2" side="tl" part="whole"/>
+		<var n="paraula1"/>
+	      </let>
+	    </when>
+	    <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	      <test>
+		<equal>
+		  <clip pos="2" side="tl" part="a_nbr"/>
+		  <lit v=""/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="paraula1"/>
+		<clip pos="2" side="tl" part="lemh"/>
+	      </let>
+	      <append n="paraula1">
+		<clip pos="2" side="tl" part="tags"/>
+		<lit-tag v="ND"/>
+		<clip pos="2" side="tl" part="lemq"/>
+	      </append>
+	      <let>
+		<clip pos="2" side="tl" part="whole"/>
+		<var n="paraula1"/>
+	      </let>
+	    </when>
+	  </choose>
+	</when>
+      </choose>
+
+
+      <!--OPERACIONS DE GÈNERE -->
+      <choose>
+	<when>
+	  <test>
+	    <equal>
+	      <clip pos="2" side="tl" part="a_gen"/>
+	      <lit-tag v="GD"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit-tag v="GD"/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="gen_chunk"/>
+		<lit-tag v="GD"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test>
+		<not><!--si gènere de pos 1 és masc o fem -->
+		  <or>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_gen"/>
+		      <lit-tag v="mf"/>
+		    </equal>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_gen"/>
+		      <lit v=""/>
+		    </equal>
+		  </or>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="2" side="tl" part="a_gen"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	      <let>
+		<var n="gen_chunk"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	    </when>
+	    <otherwise><!--si gènere pos 1 és mf o no té gènere-->
+	      <let>
+		<var n="gen_chunk"/>
+		<lit-tag v="GD"/>
+	      </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      <choose>
+	<when>
+	  <test>
+	    <equal>
+	      <clip pos="1" side="tl" part="a_gen"/>
+	      <lit-tag v="GD"/>
+	    </equal>
+	  </test>
+	  <let>
+	    <var n="gen_chunk"/>
+	    <lit-tag v="GD"/>
+	  </let>	
+	</when>
+	<when>
+	  <test>
+	    <not>
+	      <or>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit-tag v="mf"/>
+		</equal>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit v=""/>
+		</equal>
+	      </or>
+	    </not>
+	  </test>
+	  <let>
+	    <var n="gen_chunk"/>
+	    <clip pos="1" side="tl" part="a_gen"/>
+	  </let>
+	</when>
+	<otherwise><!--si gènere de pos 1 és mf -->
+	  <choose>
+	    <when>
+	      <test><!--si el gènere de pos 2 és GD, el gènere del chunk serà tb GD (deixant pos 1 com a mf) per si es pot assignar gènere a pos 2 (p. ex. 'the pacient - el/la pacient') -->
+		<not>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_gen"/>
+		    <lit-tag v="GD"/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<var n="gen_chunk"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
+      <!--OPERACIONS DE NOMBRE -->
+
+      <choose>
+	<when>
+	  <test>
+	    <equal>
+	      <clip pos="2" side="tl" part="a_nbr"/>
+	      <lit-tag v="ND"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit-tag v="ND"/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<lit-tag v="ND"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test>
+		<not><!--si nombre de pos 1 és masc o fem -->
+		  <or>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_nbr"/>
+		      <lit-tag v="sp"/>
+		    </equal>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_nbr"/>
+		      <lit v=""/>
+		    </equal>
+		  </or>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="2" side="tl" part="a_nbr"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <otherwise><!--si nombre pos 1 és sp o no té nombre -->
+	      <let>
+		<var n="nbr_chunk"/>
+		<lit-tag v="ND"/>
+	      </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      <choose>
+	<when>
+	  <test>
+	    <equal>
+	      <clip pos="1" side="tl" part="a_nbr"/>
+	      <lit-tag v="ND"/>
+	    </equal>
+	  </test>
+	  <let>
+	    <var n="nbr_chunk"/>
+	    <lit-tag v="ND"/>
+	  </let>	
+	</when>
+	<when>
+	  <test>
+	    <not>
+	      <or>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit-tag v="sp"/>
+		</equal>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit v=""/>
+		</equal>
+	      </or>
+	    </not>
+	  </test>
+	  <let>
+	    <var n="nbr_chunk"/>
+	    <clip pos="1" side="tl" part="a_nbr"/>
+	  </let>
+	</when>
+	<otherwise><!--si nombre de pos 1 és sp -->
+	  <choose>
+	    <when>
+	      <test>
+		<or>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="sg"/>
+		  </equal>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="pl"/>
+		  </equal>
+		</or>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="2" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test><!--si pos 2 és també sp-->
+		<equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="sp"/>
+		  </equal>
+	      </test>	      
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test><!--si pos 2 no té nombre (ex: xifres) -->
+		<equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit v=""/>
+		  </equal>
+	      </test>
+	      <let> <!-- el nombre del chunk serà sp, que no estarà enllaçat amb la posició 2 (pq no té valor per a l'atribut nbr"-->
+		<var n="nbr_chunk"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
     </def-macro>
+
+
+
+   <def-macro n="f_concord3" npar="3"><!--1 = main parameter (typically noun); 2  = secondary parameter (typically adj or det). 3 = other secondary param. (typically det) -->
+     <let>
+       <var n="gen_chunk"/>
+       <lit v=""/>
+     </let>
+     <let>
+       <var n="nbr_chunk"/>
+       <lit v=""/>
+     </let>
+     <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+       <when>
+	 <test>
+	   <equal>
+	     <clip pos="2" side="tl" part="a_num"/>
+	     <lit v=""/>
+	   </equal>
+	 </test>
+	 <choose>
+	   <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	     <test>
+	       <equal>
+		 <clip pos="2" side="tl" part="a_gen"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="2" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="2" side="tl" part="tags"/>
+	       <lit-tag v="GD"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="2" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="2" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	   <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	     <test>
+	       <equal>
+		 <clip pos="2" side="tl" part="a_nbr"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="2" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="2" side="tl" part="tags"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="2" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="2" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	 </choose>
+       </when>
+     </choose>
+
+     <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+       <when>
+	 <test>
+	   <equal>
+	     <clip pos="3" side="tl" part="a_num"/>
+	     <lit v=""/>
+	   </equal>
+	 </test>
+
+
+	 <choose>
+	   <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	     <test>
+	       <equal>
+		 <clip pos="3" side="tl" part="a_gen"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="3" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="3" side="tl" part="tags"/>
+	       <lit-tag v="GD"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="3" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="3" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	   <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	     <test>
+	       <equal>
+		 <clip pos="3" side="tl" part="a_nbr"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="3" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="3" side="tl" part="tags"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="3" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="3" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	 </choose>
+       </when>
+     </choose>
+
+
+
+
+<!--OPERACIONS DE GÈNERE -->
+      <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="2" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	      </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit-tag v="GD"/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="gen_chunk"/>
+		<lit-tag v="GD"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test>
+		<not><!--si gènere de pos 1 és masc o fem -->
+		  <or>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_gen"/>
+		      <lit-tag v="mf"/>
+		    </equal>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_gen"/>
+		      <lit v=""/>
+		    </equal>
+		  </or>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="2" side="tl" part="a_gen"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	      <let>
+		<var n="gen_chunk"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	    </when>
+	    <otherwise><!--si gènere pos 1 és mf -->
+	      <let>
+		<var n="gen_chunk"/>
+		<lit-tag v="GD"/>
+	      </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="1" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	      </equal>
+	  </test>
+	  <let>
+	    <var n="gen_chunk"/>
+	    <lit-tag v="GD"/>
+	  </let>	
+	</when>
+	<when>
+	  <test>
+	    <not>
+	      <or>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit-tag v="mf"/>
+		</equal>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit v=""/>
+		</equal>
+	      </or>
+	    </not>
+	  </test>
+	  <let>
+	    <var n="gen_chunk"/>
+	    <clip pos="1" side="tl" part="a_gen"/>
+	  </let>
+	</when>
+	<otherwise><!--si gènere de pos 1 és mf -->
+	  <choose>
+	    <when>
+	      <test><!--si el gènere de pos 2 és GD, el gènere del chunk serà tb GD (deixant pos 1 com a mf) per si es pot assignar gènere a pos 2 (p. ex. 'the pacient - el/la pacient') -->
+		<and>
+		  <not>
+		    <equal>
+		      <clip pos="2" side="tl" part="a_gen"/>
+		      <lit-tag v="GD"/>
+		    </equal>
+		  </not>
+		  <not>
+		    <equal>
+		      <clip pos="3" side="tl" part="a_gen"/>
+		      <lit-tag v="GD"/>
+		    </equal>
+		  </not>
+		</and>
+	      </test>
+	      <let>
+		<var n="gen_chunk"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
+      <choose><!--i aquí les operacions per a posició 3. -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="3" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="gen_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="3" side="tl" part="a_gen"/>
+		<var n="gen_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="gen_chunk"/>
+		 <lit-tag v="GD"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>   
+	      
+<!--OPERACIONS DE NOMBRE -->
+
+  <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="2" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	      </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit-tag v="ND"/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<lit-tag v="ND"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test>
+		<not><!--si nombre de pos 1 és masc o fem -->
+		  <or>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_nbr"/>
+		      <lit-tag v="sp"/>
+		    </equal>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_nbr"/>
+		      <lit v=""/>
+		    </equal>
+		  </or>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="2" side="tl" part="a_nbr"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <otherwise><!--si nombre pos 1 és sp o no té nombre -->
+	      <let>
+		<var n="nbr_chunk"/>
+		<lit-tag v="ND"/>
+	      </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="1" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	      </equal>
+	  </test>
+	  <let>
+	    <var n="nbr_chunk"/>
+	    <lit-tag v="ND"/>
+	  </let>	
+	</when>
+	<when>
+	  <test>
+	    <not>
+	      <or>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit-tag v="sp"/>
+		</equal>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit v=""/>
+		</equal>
+	      </or>
+	    </not>
+	  </test>
+	  <let>
+	    <var n="nbr_chunk"/>
+	    <clip pos="1" side="tl" part="a_nbr"/>
+	  </let>
+	</when>
+	<otherwise><!--si nombre de pos 1 és sp -->
+	  <choose>
+	    <when>
+	      <test>
+		<or>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="sg"/>
+		  </equal>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="pl"/>
+		  </equal>
+		</or>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="2" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test><!--si pos 2 és també sp-->
+		<equal>
+		  <clip pos="2" side="tl" part="a_nbr"/>
+		  <lit-tag v="sp"/>
+		</equal>
+	      </test>	 
+	      <choose><!--si pos 3 no és sp o ND, assigna gènere de pos 3 al chunk-->
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="3" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+	      </choose>
+	    </when>
+	    <when>
+	      <test><!--si pos 2 no té nombre (ex: xifres) -->
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit v=""/>
+		  </equal>
+	      </test>
+	      <choose>
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="3" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+		<otherwise>
+		  <let> <!-- el nombre del chunk serà sp, que no estarà enllaçat amb la posició 2 (pq no té valor per a l'atribut nbr"-->
+		    <var n="nbr_chunk"/>
+		    <clip pos="1" side="tl" part="a_nbr"/>
+		  </let>
+		</otherwise>
+	      </choose>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
+       <choose><!--i aquí les operacions per a posició 3. -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="3" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="nbr_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="3" side="tl" part="a_nbr"/>
+		<var n="nbr_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="nbr_chunk"/>
+		 <lit-tag v="ND"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+</def-macro>
+
+
+
+  <def-macro n="f_concord4" npar="4"><!--1 = main parameter (typically noun); 2 = secondary parameter (typically adj); 3 and 4 = other secondary param. (typically det) -->
+    <let>
+      <var n="gen_chunk"/>
+      <lit v=""/>
+    </let>
+    <let>
+      <var n="nbr_chunk"/>
+      <lit v=""/>
+    </let>
+    <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+      <when>
+	<test>
+	    <equal>
+	      <clip pos="2" side="tl" part="a_num"/>
+	      <lit v=""/>
+	    </equal>
+	</test>
+	<choose>
+	  <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	    <test>
+	      <equal>
+		<clip pos="2" side="tl" part="a_gen"/>
+		<lit v=""/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="paraula1"/>
+	      <clip pos="2" side="tl" part="lemh"/>
+	    </let>
+	    <append n="paraula1">
+	      <clip pos="2" side="tl" part="tags"/>
+	      <lit-tag v="GD"/>
+	      <lit-tag v="ND"/>
+	      <clip pos="2" side="tl" part="lemq"/>
+	    </append>
+	    <let>
+	      <clip pos="2" side="tl" part="whole"/>
+	      <var n="paraula1"/>
+	    </let>
+	  </when>
+	  <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	    <test>
+	      <equal>
+		<clip pos="2" side="tl" part="a_nbr"/>
+		<lit v=""/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="paraula1"/>
+	      <clip pos="2" side="tl" part="lemh"/>
+	    </let>
+	    <append n="paraula1">
+	      <clip pos="2" side="tl" part="tags"/>
+	      <lit-tag v="ND"/>
+	      <clip pos="2" side="tl" part="lemq"/>
+	    </append>
+	    <let>
+	      <clip pos="2" side="tl" part="whole"/>
+	      <var n="paraula1"/>
+	    </let>
+	  </when>
+	</choose>
+      </when>
+    </choose>
+
+    <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+      <when>
+	<test>
+	    <equal>
+	      <clip pos="3" side="tl" part="a_num"/>
+	      <lit v=""/>
+	    </equal>
+	</test>
+	<choose>
+	  <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	    <test>
+	      <equal>
+		<clip pos="3" side="tl" part="a_gen"/>
+		<lit v=""/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="paraula1"/>
+	      <clip pos="3" side="tl" part="lemh"/>
+	    </let>
+	    <append n="paraula1">
+	      <clip pos="3" side="tl" part="tags"/>
+	      <lit-tag v="GD"/>
+	      <lit-tag v="ND"/>
+	      <clip pos="3" side="tl" part="lemq"/>
+	    </append>
+	    <let>
+	      <clip pos="3" side="tl" part="whole"/>
+	      <var n="paraula1"/>
+	    </let>
+	  </when>
+	  <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	    <test>
+	      <equal>
+		<clip pos="3" side="tl" part="a_nbr"/>
+		<lit v=""/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="paraula1"/>
+	      <clip pos="3" side="tl" part="lemh"/>
+	    </let>
+	    <append n="paraula1">
+	      <clip pos="3" side="tl" part="tags"/>
+	      <lit-tag v="ND"/>
+	      <clip pos="3" side="tl" part="lemq"/>
+	    </append>
+	    <let>
+	      <clip pos="3" side="tl" part="whole"/>
+	      <var n="paraula1"/>
+	    </let>
+	  </when>
+	</choose>
+      </when>
+    </choose>
+    <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+      <when>
+	<test>
+	    <equal>
+	      <clip pos="4" side="tl" part="a_num"/>
+	      <lit v=""/>
+	    </equal>
+	</test>
+
+	<choose>
+	  <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	    <test>
+	      <equal>
+		<clip pos="4" side="tl" part="a_gen"/>
+		<lit v=""/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="paraula1"/>
+	      <clip pos="4" side="tl" part="lemh"/>
+	    </let>
+	    <append n="paraula1">
+	      <clip pos="4" side="tl" part="tags"/>
+	      <lit-tag v="GD"/>
+	      <lit-tag v="ND"/>
+	      <clip pos="4" side="tl" part="lemq"/>
+	    </append>
+	    <let>
+	      <clip pos="4" side="tl" part="whole"/>
+	      <var n="paraula1"/>
+	    </let>
+	  </when>
+	  <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	    <test>
+	      <equal>
+		<clip pos="4" side="tl" part="a_nbr"/>
+		<lit v=""/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="paraula1"/>
+	      <clip pos="4" side="tl" part="lemh"/>
+	    </let>
+	    <append n="paraula1">
+	      <clip pos="4" side="tl" part="tags"/>
+	      <lit-tag v="ND"/>
+	      <clip pos="4" side="tl" part="lemq"/>
+	    </append>
+	    <let>
+	      <clip pos="4" side="tl" part="whole"/>
+	      <var n="paraula1"/>
+	    </let>
+	  </when>
+	</choose>
+      </when>
+    </choose>
+
+
+    <!--OPERACIONS DE GÈNERE -->
+    <choose>
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="2" side="tl" part="a_gen"/>
+	    <lit-tag v="GD"/>
+	  </equal>
+	</test>
+	<choose>
+	  <when>
+	    <test>
+	      <equal>
+		<clip pos="1" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="gen_chunk"/>
+	      <lit-tag v="GD"/>
+	    </let>
+	  </when>
+	  <when>
+	    <test>
+	      <not><!--si gènere de pos 1 és masc o fem -->
+		<or>
+		  <equal>
+		    <clip pos="1" side="tl" part="a_gen"/>
+		    <lit-tag v="mf"/>
+		  </equal>
+		  <equal>
+		    <clip pos="1" side="tl" part="a_gen"/>
+		    <lit v=""/>
+		  </equal>
+		</or>
+	      </not>
+	    </test>
+	    <let>
+	      <clip pos="2" side="tl" part="a_gen"/>
+	      <clip pos="1" side="tl" part="a_gen"/>
+	    </let>
+	    <let>
+	      <var n="gen_chunk"/>
+	      <clip pos="1" side="tl" part="a_gen"/>
+	    </let>
+	  </when>
+	  <otherwise><!--si gènere pos 1 és mf -->
+	    <let>
+	      <var n="gen_chunk"/>
+	      <lit-tag v="GD"/>
+	    </let>
+	  </otherwise>
+	</choose>
+      </when>
+    </choose>
+    <choose>
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="1" side="tl" part="a_gen"/>
+	    <lit-tag v="GD"/>
+	  </equal>
+	</test>
+	<let>
+	  <var n="gen_chunk"/>
+	  <lit-tag v="GD"/>
+	</let>	
+      </when>
+      <when>
+	<test>
+	  <not>
+	    <or>
+	      <equal>
+		<clip pos="1" side="tl" part="a_gen"/>
+		<lit-tag v="mf"/>
+	      </equal>
+	      <equal>
+		<clip pos="1" side="tl" part="a_gen"/>
+		<lit v=""/>
+	      </equal>
+	    </or>
+	  </not>
+	</test>
+	<let>
+	  <var n="gen_chunk"/>
+	  <clip pos="1" side="tl" part="a_gen"/>
+	</let>
+      </when>
+      <otherwise><!--si gènere de pos 1 és mf -->
+	<choose>
+	  <when>
+	    <test><!--si el gènere de pos 2 és GD, el gènere del chunk serà tb GD (deixant pos 1 com a mf) per si es pot assignar gènere a pos 2 (p. ex. 'the pacient - el/la pacient') -->
+	      <and>
+		<not>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_gen"/>
+		    <lit-tag v="GD"/>
+		  </equal>
+		</not>
+		<not>
+		  <equal>
+		    <clip pos="3" side="tl" part="a_gen"/>
+		    <lit-tag v="GD"/>
+		  </equal>
+		</not>
+		<not>
+		  <equal>
+		    <clip pos="4" side="tl" part="a_gen"/>
+		    <lit-tag v="GD"/>
+		  </equal>
+		</not>
+	      </and>
+	    </test>
+	    <let>
+	      <var n="gen_chunk"/>
+	      <clip pos="1" side="tl" part="a_gen"/>
+	    </let>
+	  </when>
+	</choose>
+      </otherwise>
+    </choose>
+    <choose><!--i aquí les operacions per a posició 3 -->
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="3" side="tl" part="a_gen"/>
+	    <lit-tag v="GD"/>
+	  </equal>
+	</test>
+	<choose>
+	  <when>
+	    <test>
+	      <not>
+		<equal>		  
+		  <var n="gen_chunk"/>
+		  <lit v=""/>
+		</equal>
+	      </not>
+	    </test>
+	    <let>
+	      <clip pos="3" side="tl" part="a_gen"/>
+	      <var n="gen_chunk"/>
+	    </let>
+	  </when>
+	  <otherwise>
+	    <let>
+	      <var n="gen_chunk"/>
+	      <lit-tag v="GD"/>
+	    </let>
+	  </otherwise>
+	</choose>
+      </when>
+    </choose> 
+    <choose><!--i aquí les operacions per a posició 4 -->
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="4" side="tl" part="a_gen"/>
+	    <lit-tag v="GD"/>
+	  </equal>
+	</test>
+	<choose>
+	  <when>
+	    <test>
+	      <not>
+		<equal>		  
+		  <var n="gen_chunk"/>
+		  <lit v=""/>
+		</equal>
+	      </not>
+	    </test>
+	    <let>
+	      <clip pos="4" side="tl" part="a_gen"/>
+	      <var n="gen_chunk"/>
+	    </let>
+	  </when>
+	  <otherwise>
+	    <let>
+	      <var n="gen_chunk"/>
+	      <lit-tag v="GD"/>
+	    </let>
+	  </otherwise>
+	</choose>
+      </when>
+    </choose>    
+    
+    <!--OPERACIONS DE NOMBRE -->
+
+    <choose>
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="2" side="tl" part="a_nbr"/>
+	    <lit-tag v="ND"/>
+	  </equal>
+	</test>
+	<choose>
+	  <when>
+	    <test>
+	      <equal>
+		<clip pos="1" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	      </equal>
+	    </test>
+	    <let>
+	      <var n="nbr_chunk"/>
+	      <lit-tag v="ND"/>
+	    </let>
+	  </when>
+	  <when>
+	    <test>
+	      <not><!--si nombre de pos 1 és masc o fem -->
+		<or>
+		  <equal>
+		    <clip pos="1" side="tl" part="a_nbr"/>
+		    <lit-tag v="sp"/>
+		  </equal>
+		  <equal>
+		    <clip pos="1" side="tl" part="a_nbr"/>
+		    <lit v=""/>
+		  </equal>
+		</or>
+	      </not>
+	    </test>
+	    <let>
+	      <clip pos="2" side="tl" part="a_nbr"/>
+	      <clip pos="1" side="tl" part="a_nbr"/>
+	    </let>
+	    <let>
+	      <var n="nbr_chunk"/>
+	      <clip pos="1" side="tl" part="a_nbr"/>
+	    </let>
+	  </when>
+	  <otherwise><!--si nombre pos 1 és sp -->
+	    <let>
+	      <var n="nbr_chunk"/>
+	      <lit-tag v="ND"/>
+	    </let>
+	  </otherwise>
+	</choose>
+      </when>
+    </choose>
+    <choose>
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="1" side="tl" part="a_nbr"/>
+	    <lit-tag v="ND"/>
+	  </equal>
+	</test>
+	<let>
+	  <var n="nbr_chunk"/>
+	  <lit-tag v="ND"/>
+	</let>	
+      </when>
+      <when>
+	<test>
+	  <not>
+	    <or>
+	      <equal>
+		<clip pos="1" side="tl" part="a_nbr"/>
+		<lit-tag v="sp"/>
+	      </equal>
+	      <equal>
+		<clip pos="1" side="tl" part="a_nbr"/>
+		<lit v=""/>
+	      </equal>
+	    </or>
+	  </not>
+	</test>
+	<let>
+	  <var n="nbr_chunk"/>
+	  <clip pos="1" side="tl" part="a_nbr"/>
+	</let>
+      </when>
+      <otherwise><!--si nombre de pos 1 és sp -->
+      <choose>
+	    <when>
+	      <test>
+		<or>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="sg"/>
+		  </equal>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="pl"/>
+		  </equal>
+		</or>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="2" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test><!--si pos 2 és també sp-->
+		<equal>
+		  <clip pos="2" side="tl" part="a_nbr"/>
+		  <lit-tag v="sp"/>
+		</equal>
+	      </test>	 
+	      <choose><!--si pos 3 no és sp o ND, assigna gènere de pos 3 al chunk-->
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="3" side="tl" part="a_nbr"/>
+		  </let>
+		</when>		
+		<when>
+		  <test><!--si pos 3 és també sp-->
+		    <equal>
+		      <clip pos="3" side="tl" part="a_nbr"/>
+		      <lit-tag v="sp"/>
+		    </equal>
+		  </test>	 
+		  <choose><!--si pos 4 no és sp o ND, assigna gènere de pos 4 al chunk-->
+		    <when>
+		      <test>
+			<or>
+			  <equal>
+			    <clip pos="4" side="tl" part="a_nbr"/>
+			    <lit-tag v="sg"/>
+			  </equal>
+			  <equal>
+			    <clip pos="4" side="tl" part="a_nbr"/>
+			    <lit-tag v="pl"/>
+			  </equal>
+			</or>
+		      </test>
+		      <let>
+			<var n="nbr_chunk"/>
+			<clip pos="4" side="tl" part="a_nbr"/>
+		      </let>
+		    </when>
+		  </choose>
+		</when>
+	      </choose>
+	    </when>
+
+	    <when>
+	      <test><!--si pos 2 no té nombre (ex: xifres) -->
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit v=""/>
+		  </equal>
+	      </test>
+	      <choose>
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="3" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="4" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="4" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="4" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+		<otherwise>
+		  <let> <!-- el nombre del chunk serà sp, que no estarà enllaçat amb la posició 2 (pq no té valor per a l'atribut nbr"-->
+		    <var n="nbr_chunk"/>
+		    <clip pos="1" side="tl" part="a_nbr"/>
+		  </let>
+		</otherwise>
+	      </choose>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
+
+    <choose><!--i aquí les operacions per a posició 3. -->
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="3" side="tl" part="a_nbr"/>
+	    <lit-tag v="ND"/>
+	  </equal>
+	</test>
+	<choose>
+	  <when>
+	    <test>
+	      <not>
+		<equal>		  
+		  <var n="nbr_chunk"/>
+		  <lit v=""/>
+		</equal>
+	      </not>
+	    </test>
+	    <let>
+	      <clip pos="3" side="tl" part="a_nbr"/>
+	      <var n="nbr_chunk"/>
+	    </let>
+	  </when>
+	  <otherwise>
+	    <let>
+	      <var n="nbr_chunk"/>
+	      <lit-tag v="ND"/>
+	    </let>
+	  </otherwise>
+	</choose>
+      </when>
+    </choose>
+    <choose><!--i aquí les operacions per a posició 4. -->
+      <when>
+	<test>
+	  <equal>
+	    <clip pos="4" side="tl" part="a_nbr"/>
+	    <lit-tag v="ND"/>
+	  </equal>
+	</test>
+	<choose>
+	  <when>
+	    <test>
+	      <not>
+		<equal>		  
+		  <var n="nbr_chunk"/>
+		  <lit v=""/>
+		</equal>
+	      </not>
+	    </test>
+	    <let>
+	      <clip pos="4" side="tl" part="a_nbr"/>
+	      <var n="nbr_chunk"/>
+	    </let>
+	  </when>
+	  <otherwise>
+	    <let>
+	      <var n="nbr_chunk"/>
+	      <lit-tag v="ND"/>
+	    </let>
+	  </otherwise>
+	</choose>
+      </when>
+    </choose>
+  </def-macro>
+
+
+
+
+ <def-macro n="f_concord5" npar="5"><!--1 = main parameter (typically noun); 2 = secondary parameter (typically adj); 3 , 4 and 5 = other secondary param. (typically det) -->
+     <let>
+       <var n="gen_chunk"/>
+       <lit v=""/>
+     </let>
+     <let>
+       <var n="nbr_chunk"/>
+       <lit v=""/>
+     </let>
+     <!--PRIMER ASSIGNEM VALORS DE GD I ND SI CAL A LES POSICIONES SECUNDÀRIES -->
+     <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+       <when>
+	 <test>
+	     <equal>
+	       <clip pos="2" side="tl" part="a_num"/>
+	       <lit v=""/>
+	     </equal>
+	 </test>
+	 <choose>
+	   <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	     <test>
+	       <equal>
+		 <clip pos="2" side="tl" part="a_gen"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="2" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="2" side="tl" part="tags"/>
+	       <lit-tag v="GD"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="2" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="2" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	   <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	     <test>
+	       <equal>
+		 <clip pos="2" side="tl" part="a_nbr"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="2" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="2" side="tl" part="tags"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="2" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="2" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	 </choose>
+       </when>
+     </choose>
+
+     <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+       <when>
+	 <test>
+	     <equal>
+	       <clip pos="3" side="tl" part="a_num"/>
+	       <lit v=""/>
+	     </equal>
+	 </test>
+	 <choose>
+	   <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	     <test>
+	       <equal>
+		 <clip pos="3" side="tl" part="a_gen"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="3" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="3" side="tl" part="tags"/>
+	       <lit-tag v="GD"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="3" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="3" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	   <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	     <test>
+	       <equal>
+		 <clip pos="3" side="tl" part="a_nbr"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="3" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="3" side="tl" part="tags"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="3" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="3" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	 </choose>
+       </when>
+     </choose>
+
+     <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+       <when>
+	 <test>
+	     <equal>
+	       <clip pos="4" side="tl" part="a_num"/>
+	       <lit v=""/>
+	     </equal>
+	 </test>
+	 
+	 <choose>
+	   <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	     <test>
+	       <equal>
+		 <clip pos="4" side="tl" part="a_gen"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="4" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="4" side="tl" part="tags"/>
+	       <lit-tag v="GD"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="4" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="4" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	   <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	     <test>
+	       <equal>
+		 <clip pos="4" side="tl" part="a_nbr"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="4" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="4" side="tl" part="tags"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="4" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="4" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	 </choose>
+       </when>
+     </choose>
+
+     <choose><!--posa GD i ND a la paraula si no té valor per a gènere o per a nombre (excepte números) -->
+       <when>
+	 <test>
+	     <equal>
+	       <clip pos="5" side="tl" part="a_num"/>
+	       <lit v=""/>
+	     </equal>
+	 </test>
+	 <choose>
+	   <when><!--si la paraula no té valor per a gènere (i en aquest cas, tampoc per a nombre) -->
+	     <test>
+	       <equal>
+		 <clip pos="5" side="tl" part="a_gen"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="5" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="5" side="tl" part="tags"/>
+	       <lit-tag v="GD"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="5" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="5" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	   <when><!--si la paraula no té valor per a nombre (però sí per a gènere, ja que sinó hauria entrat pel when anterior) -->
+	     <test>
+	       <equal>
+		 <clip pos="5" side="tl" part="a_nbr"/>
+		 <lit v=""/>
+	       </equal>
+	     </test>
+	     <let>
+	       <var n="paraula1"/>
+	       <clip pos="5" side="tl" part="lemh"/>
+	     </let>
+	     <append n="paraula1">
+	       <clip pos="5" side="tl" part="tags"/>
+	       <lit-tag v="ND"/>
+	       <clip pos="5" side="tl" part="lemq"/>
+	     </append>
+	     <let>
+	       <clip pos="5" side="tl" part="whole"/>
+	       <var n="paraula1"/>
+	     </let>
+	   </when>
+	 </choose>
+       </when>
+     </choose>
+
+
+
+<!--OPERACIONS DE GÈNERE -->
+      <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="2" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	      </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit-tag v="GD"/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="gen_chunk"/>
+		<lit-tag v="GD"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test>
+		<not><!--si gènere de pos 1 és masc o fem -->
+		  <or>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_gen"/>
+		      <lit-tag v="mf"/>
+		    </equal>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_gen"/>
+		      <lit v=""/>
+		    </equal>
+		  </or>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="2" side="tl" part="a_gen"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	      <let>
+		<var n="gen_chunk"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	    </when>
+	    <otherwise><!--si gènere pos 1 és mf -->
+	      <let>
+		<var n="gen_chunk"/>
+		<lit-tag v="GD"/>
+	      </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="1" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	      </equal>
+	  </test>
+	  <let>
+	    <var n="gen_chunk"/>
+	    <lit-tag v="GD"/>
+	  </let>	
+	</when>
+	<when>
+	  <test>
+	    <not>
+	      <or>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit-tag v="mf"/>
+		</equal>
+		<equal>
+		  <clip pos="1" side="tl" part="a_gen"/>
+		  <lit v=""/>
+		</equal>
+	      </or>
+	    </not>
+	  </test>
+	  <let>
+	    <var n="gen_chunk"/>
+	    <clip pos="1" side="tl" part="a_gen"/>
+	  </let>
+	</when>
+	<otherwise><!--si gènere de pos 1 és mf -->
+	  <choose>
+	    <when>
+	      <test><!--si el gènere de pos 2 és GD, el gènere del chunk serà tb GD (deixant pos 1 com a mf) per si es pot assignar gènere a pos 2 (p. ex. 'the pacient - el/la pacient') -->
+		<and>
+		  <not>
+		    <equal>
+		      <clip pos="2" side="tl" part="a_gen"/>
+		      <lit-tag v="GD"/>
+		    </equal>
+		  </not>
+		  <not>
+		    <equal>
+		      <clip pos="3" side="tl" part="a_gen"/>
+		      <lit-tag v="GD"/>
+		    </equal>
+		  </not>
+		  <not>
+		    <equal>
+		      <clip pos="4" side="tl" part="a_gen"/>
+		      <lit-tag v="GD"/>
+		    </equal>
+		  </not>
+		  <not>
+		    <equal>
+		      <clip pos="5" side="tl" part="a_gen"/>
+		      <lit-tag v="GD"/>
+		    </equal>
+		  </not>
+		</and>
+	      </test>
+	      <let>
+		<var n="gen_chunk"/>
+		<clip pos="1" side="tl" part="a_gen"/>
+	      </let>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
+      <choose><!--i aquí les operacions per a posició 3 -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="3" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="gen_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="3" side="tl" part="a_gen"/>
+		<var n="gen_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="gen_chunk"/>
+		 <lit-tag v="GD"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose> 
+      <choose><!--i aquí les operacions per a posició 4 -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="4" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="gen_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="4" side="tl" part="a_gen"/>
+		<var n="gen_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="gen_chunk"/>
+		 <lit-tag v="GD"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose> 
+      <choose><!--i aquí les operacions per a posició 5 -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="5" side="tl" part="a_gen"/>
+		<lit-tag v="GD"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="gen_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="5" side="tl" part="a_gen"/>
+		<var n="gen_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="gen_chunk"/>
+		 <lit-tag v="GD"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>    
+	      
+	      
+<!--OPERACIONS DE NOMBRE -->
+
+  <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="2" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	      </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit-tag v="ND"/>
+		</equal>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<lit-tag v="ND"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test>
+		<not><!--si nombre de pos 1 és masc o fem -->
+		  <or>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_nbr"/>
+		      <lit-tag v="sp"/>
+		    </equal>
+		    <equal>
+		      <clip pos="1" side="tl" part="a_nbr"/>
+		      <lit v=""/>
+		    </equal>
+		  </or>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="2" side="tl" part="a_nbr"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="1" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <otherwise><!--si nombre pos 1 és sp -->
+	      <let>
+		<var n="nbr_chunk"/>
+		<lit-tag v="ND"/>
+	      </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      <choose>
+	<when>
+	  <test>
+	      <equal>
+		<clip pos="1" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	      </equal>
+	  </test>
+	  <let>
+	    <var n="nbr_chunk"/>
+	    <lit-tag v="ND"/>
+	  </let>	
+	</when>
+	<when>
+	  <test>
+	    <not>
+	      <or>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit-tag v="sp"/>
+		</equal>
+		<equal>
+		  <clip pos="1" side="tl" part="a_nbr"/>
+		  <lit v=""/>
+		</equal>
+	      </or>
+	    </not>
+	  </test>
+	  <let>
+	    <var n="nbr_chunk"/>
+	    <clip pos="1" side="tl" part="a_nbr"/>
+	  </let>
+	</when>
+	<otherwise><!--si nombre de pos 1 és sp -->
+	<choose>
+	    <when>
+	      <test>
+		<or>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="sg"/>
+		  </equal>
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit-tag v="pl"/>
+		  </equal>
+		</or>
+	      </test>
+	      <let>
+		<var n="nbr_chunk"/>
+		<clip pos="2" side="tl" part="a_nbr"/>
+	      </let>
+	    </when>
+	    <when>
+	      <test><!--si pos 2 és també sp-->
+		<equal>
+		  <clip pos="2" side="tl" part="a_nbr"/>
+		  <lit-tag v="sp"/>
+		</equal>
+	      </test>	 
+	      <choose><!--si pos 3 no és sp o ND, assigna gènere de pos 3 al chunk-->
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="3" side="tl" part="a_nbr"/>
+		  </let>
+		</when>		
+		<when>
+		  <test><!--si pos 3 és també sp-->
+		    <equal>
+		      <clip pos="3" side="tl" part="a_nbr"/>
+		      <lit-tag v="sp"/>
+		    </equal>
+		  </test>	 
+		  <choose><!--si pos 4 no és sp o ND, assigna gènere de pos 4 al chunk-->
+		    <when>
+		      <test>
+			<or>
+			  <equal>
+			    <clip pos="4" side="tl" part="a_nbr"/>
+			    <lit-tag v="sg"/>
+			  </equal>
+			  <equal>
+			    <clip pos="4" side="tl" part="a_nbr"/>
+			    <lit-tag v="pl"/>
+			  </equal>
+			</or>
+		      </test>
+		      <let>
+			<var n="nbr_chunk"/>
+			<clip pos="4" side="tl" part="a_nbr"/>
+		      </let>
+		    </when>
+
+		    <when>
+		      <test><!--si pos 4 és també sp-->
+			<equal>
+			  <clip pos="4" side="tl" part="a_nbr"/>
+			  <lit-tag v="sp"/>
+			</equal>
+		      </test>	 
+		      <choose><!--si pos 5 no és sp o ND, assigna gènere de pos 5 al chunk-->
+			<when>
+			  <test>
+			    <or>
+			      <equal>
+				<clip pos="5" side="tl" part="a_nbr"/>
+				<lit-tag v="sg"/>
+			      </equal>
+			      <equal>
+				<clip pos="5" side="tl" part="a_nbr"/>
+				<lit-tag v="pl"/>
+			      </equal>
+			    </or>
+			  </test>
+			  <let>
+			    <var n="nbr_chunk"/>
+			    <clip pos="5" side="tl" part="a_nbr"/>
+			  </let>
+			</when>
+		      </choose>
+		    </when>		
+			
+		  </choose>
+		</when>
+	      </choose>
+	    </when>
+
+	    <when>
+	      <test><!--si pos 2 no té nombre (ex: xifres) -->
+		  <equal>
+		    <clip pos="2" side="tl" part="a_nbr"/>
+		    <lit v=""/>
+		  </equal>
+	      </test>
+	      <choose>
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="3" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="3" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="4" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="4" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="4" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+		<when>
+		  <test>
+		    <or>
+		      <equal>
+			<clip pos="5" side="tl" part="a_nbr"/>
+			<lit-tag v="sg"/>
+		      </equal>
+		      <equal>
+			<clip pos="5" side="tl" part="a_nbr"/>
+			<lit-tag v="pl"/>
+		      </equal>
+		    </or>
+		  </test>
+		  <let>
+		    <var n="nbr_chunk"/>
+		    <clip pos="5" side="tl" part="a_nbr"/>
+		  </let>
+		</when>
+		<otherwise>
+		  <let> <!-- el nombre del chunk serà sp, que no estarà enllaçat amb la posició 2 (pq no té valor per a l'atribut nbr"-->
+		    <var n="nbr_chunk"/>
+		    <clip pos="1" side="tl" part="a_nbr"/>
+		  </let>
+		</otherwise>
+	      </choose>
+	    </when>
+	  </choose>
+	</otherwise>
+      </choose>
+       <choose><!--i aquí les operacions per a posició 3. -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="3" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="nbr_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="3" side="tl" part="a_nbr"/>
+		<var n="nbr_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="nbr_chunk"/>
+		 <lit-tag v="ND"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+       <choose><!--i aquí les operacions per a posició 4. -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="4" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="nbr_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="4" side="tl" part="a_nbr"/>
+		<var n="nbr_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="nbr_chunk"/>
+		 <lit-tag v="ND"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+      
+       <choose><!--i aquí les operacions per a posició 5. -->
+	<when>
+	  <test>
+	    <equal>
+		<clip pos="5" side="tl" part="a_nbr"/>
+		<lit-tag v="ND"/>
+	    </equal>
+	  </test>
+	  <choose>
+	    <when>
+	      <test>
+		<not>
+		  <equal>		  
+		    <var n="nbr_chunk"/>
+		    <lit v=""/>
+		  </equal>
+		</not>
+	      </test>
+	      <let>
+		<clip pos="5" side="tl" part="a_nbr"/>
+		<var n="nbr_chunk"/>
+	      </let>
+	    </when>
+	    <otherwise>
+	       <let>
+		 <var n="nbr_chunk"/>
+		 <lit-tag v="ND"/>
+	       </let>
+	    </otherwise>
+	  </choose>
+	</when>
+      </choose>
+</def-macro>
+
+
+
+
+
   </section-def-macros>
 
   <section-rules>
+    <!-- SECTION: Sintagmas nominales -->
+
+    <rule comment="REGLA: nom kuéra → nom">
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="kuéra"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_nbr"/><lit-tag v="pl"/></let>
+        <out>
+          <chunk name="n" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="tl" part="a_gen"/></tag>
+              <tag><clip pos="1" side="tl" part="a_nbr"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: nom adj">
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="f_concord2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk name="n_a" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="tl" part="a_gen"/></tag>
+              <tag><clip pos="1" side="tl" part="a_nbr"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <!-- SECTION: Reglas lexicalizadas de sintagmas adposicionales -->
+
+    <rule comment="REGLA: ary num post → post el año num">
+      <pattern>
+        <pattern-item n="ary"/>
+        <pattern-item n="num"/>
+        <pattern-item n="post"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="post" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SP"/></tag>
+            </tags>
+            <lu>
+              <clip pos="3" side="tl" part="whole"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <lit v="el"/><lit-tag v="det.def.m.sg"/>
+            </lu>
+            <b/>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <b pos="2"/>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: top r-det tetã post → post top">
+      <pattern>
+        <pattern-item n="top"/>
+        <pattern-item n="r-det"/>
+        <pattern-item n="tetã"/>
+        <pattern-item n="post"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="pr_top" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SP"/></tag>
+            </tags>
+            <lu>
+              <clip pos="4" side="tl" part="whole"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <!-- SECTION: Sintagmas verbales -->
+
+    <rule comment="REGLA: vbser">
+      <pattern>
+        <pattern-item n="vbser"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="cop" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="COP.pri.p3.sg"/></tag>
+            </tags>
+            <lu>
+              <lit v="ser"/>
+              <lit-tag v="vbser.pri.p3.4"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <!-- SECTION: Puntuación -->
+
     <rule comment="REGLA: SENT">
       <pattern>
         <pattern-item n="sent"/>
@@ -46,6 +2510,7 @@
         </out>
       </action>
     </rule>
+
   </section-rules>
 </transfer>
 
