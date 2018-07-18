@@ -1867,10 +1867,21 @@
 
       <!-- SECTION: Nombres propios -->
       <e><p><l>Paraguái<s n="np"/><s n="top"/></l><r>Paraguay<s n="np"/><s n="loc"/></r></p></e>
+      
+      <!-- SECTION: Demonstrative adjectives-->
+      <e><p><l>ko<s n="adj"/></l><r>este<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
+      <e><p><l>pe<s n="adj"/></l><r>este<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
+      <e><p><l>amo<s n="adj"/></l><r>aquel<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
+      <e><p><l>ã<s n="adj"/></l><r>estos<s n="adj"/><s n="dem"/><s n="pl"/></r></p><par n="adj_GD|ND"/></e>
+      <e><p><l>koʼã<s n="adj"/></l><r>estos<s n="adj"/><s n="dem"/><s n="pl"/></r></p><par n="adj_GD|ND"/></e>      
+      <e><p><l>umi<s n="adj"/></l><r>aquellos<s n="adj"/><s n="dem"/><s n="pl"/></r></p><par n="adj_GD|ND"/></e>      
+      
+      <e><p><l>ku<s n="adj"/></l><r>ese<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>      
+      <e><p><l>upe<s n="adj"/></l><r>ese<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>      
+      <e><p><l>aipo<s n="adj"/></l><r>aquel<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>      
 
       <!-- SECTION: Adjetivos -->
-
-
+  
       <e><p><l>amyrỹi<s n="adj"/></l><r>difunto<s n="adj"/></r></p><par n="adj_GD|ND"/></e>
     <e><p><l>parapa<s n="adj"/></l><r>multicolor<s n="adj"/></r></p><par n="adj_mf|ND"/></e>
     <e><p><l>g̃uaig̃ui<s n="adj"/></l><r>vieja<s n="adj"/></r></p><par n="adj_mf|ND"/></e>
