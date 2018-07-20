@@ -13415,6 +13415,20 @@
       <e><p><l>ore<s n="prn"/><s n="pro"/><s n="p1"/><s n="pl"/><s n="acc"/></l><r>nos<s n="pro"/><s n="tn"/></r></p></e>
       <e><p><l>pende<s n="prn"/><s n="pro"/><s n="p2"/><s n="pl"/><s n="acc"/></l><r>os<s n="pro"/><s n="tn"/></r></p></e>
       
+      <e><p><l>chéve<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/><s n="dat"/></l><r>me<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>ndéve<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/><s n="dat"/></l><r>te<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>oréve<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/><s n="dat"/></l><r>le<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>ñandéve<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/><s n="dat"/></l><r>nos<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>peẽme<s n="prn"/><s n="pers"/><s n="p2"/><s n="pl"/><s n="dat"/></l><r>os<s n="prn"/><s n="tn"/></r></p></e>
+      
+      <!-- SECTION: Indefinite pronouns -->
+      <e><p><l>opavave<s n="prn"/><s n="ind"/></l><r>todos<s n="prn"/><s n="ind"/><s n="tn"/></r></p></e>
+      <e><p><l>avave<s n="prn"/><s n="ind"/></l><r>nadie<s n="prn"/><s n="ind"/><s n="tn"/></r></p></e>
+      <e><p><l>oimeraẽva<s n="prn"/><s n="ind"/></l><r>cualquier<s n="prn"/><s n="ind"/><s n="tn"/></r></p></e>
+      <e><p><l>peteĩ<s n="prn"/><s n="ind"/></l><r>uno<s n="prn"/><s n="ind"/><s n="tn"/></r></p></e>
+      <e><p><l>ambuéva<s n="prn"/><s n="ind"/></l><r>otro<s n="prn"/><s n="ind"/><s n="tn"/></r></p></e>
+      <e><p><l>mbaʼeve<s n="prn"/><s n="ind"/></l><r>nada<s n="prn"/><s n="ind"/><s n="tn"/></r></p></e>
+      
 
       <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
       <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
