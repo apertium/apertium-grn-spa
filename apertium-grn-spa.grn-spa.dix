@@ -137,6 +137,33 @@
 
       <!-- SECTION: Conjunciones -->
       <e><p><l>ha<s n="cnjcoo"/></l><r>y<s n="cnjcoo"/></r></p></e>
+	<e><p><l>térã<s n="cnjcoo"/></l><r>o<s n="cnjcoo"/></r></p></e>
+	<e><p><l>terã<s n="cnjcoo"/></l><r>o<s n="cnjcoo"/></r></p></e>
+	<e><p><l>katu<s n="cnjcoo"/></l><r>pero<s n="cnjcoo"/></r></p></e>
+	<e><p><l>rupive<s n="cnjcoo"/></l><r>por causa de<s n="cnjcoo"/></r></p></e>
+	<e><p><l>mbaʼe<s n="cnjcoo"/></l><r>que<s n="cnjcoo"/></r></p></e>
+	<e><p><l>y<s n="cnjcoo"/></l><r><s n="cnjcoo"/></r></p></e>
+	<e><p><l>chugui<s n="cnjcoo"/></l><r>pero<s n="cnjcoo"/></r></p></e>
+	<e><p><l>ỹrõ<s n="cnjcoo"/></l><r>si no<s n="cnjcoo"/></r></p></e>
+	<e><p><l>ỹrõ<s n="cnjcoo"/></l><r>o<s n="cnjcoo"/></r></p></e>
+	<e><p><l>uvei<s n="cnjcoo"/></l><r>pero<s n="cnjcoo"/></r></p></e>
+	<e><p><l>ỹramo<s n="cnjcoo"/></l><r>si no<s n="cnjcoo"/></r></p></e>
+	<e><p><l>ỹramo<s n="cnjcoo"/></l><r>o<s n="cnjcoo"/></r></p></e>
+	<e><p><l>viña<s n="cnjcoo"/></l><r>pero<s n="cnjcoo"/></r></p></e>
+	<e><p><l>tẽra<s n="cnjcoo"/></l><r>o<s n="cnjcoo"/></r></p></e>
+	<e><p><l>ajeve<s n="cnjsub"/></l><r>por eso<s n="cnjsub"/></r></p></e>
+	<e><p><l>rõ<s n="cnjsub"/></l><r>si<s n="cnjsub"/></r></p></e>
+	<e><p><l>rõ<s n="cnjsub"/></l><r>cuando<s n="cnjsub"/></r></p></e>
+	<e><p><l>ỹre<s n="cnjsub"/></l><r>sin que<s n="cnjsub"/></r></p></e>
+	<e><p><l>haguãicha<s n="cnjsub"/></l><r>como<s n="cnjsub"/></r></p></e>
+	<e><p><l>upévare<s n="cnjsub"/></l><r>por eso<s n="cnjsub"/></r></p></e>
+	<e><p><l>upekuévo<s n="cnjsub"/></l><r>Entonces<s n="cnjsub"/></r></p></e>
+	<e><p><l>upekuévo<s n="cnjsub"/></l><r>mientras tanto<s n="cnjsub"/></r></p></e>
+	<e><p><l>upévagui<s n="cnjsub"/></l><r>por eso<s n="cnjsub"/></r></p></e>
+	<e><p><l>aipórõ<s n="cnjsub"/></l><r>entonces<s n="cnjsub"/></r></p></e>
+	<e><p><l>upevére<s n="cnjsub"/></l><r><s n="cnjsub"/></r></p></e>
+	<e><p><l>upevére<s n="cnjsub"/></l><r><s n="cnjsub"/></r></p></e>
+
       
       <!-- SECTION: Adpositions -->
       <e><p><l>pe<s n="post"/></l><r>en<s n="pr"/></r></p></e>
@@ -8889,6 +8916,7 @@
     <e><p><l><s n="adj"/></l><r><s n="adj"/></r></p><par n="adj_mf|ND"/></e>
 
       <!-- SECTION: Verbs -->
+
       <e><p><l>me<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
     <e><p><l>aime<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
     <e><p><l>ĩ<s n="v"/><s n="tv"/></l><r>estar<s n="vblex"/></r></p></e>
@@ -13327,14 +13355,23 @@
     <e><p><l>g̃uahe<s n="v"/><s n="iv"/></l><r>llegar<s n="vblex"/></r></p></e>
     <e><p><l>g̃uahẽ<s n="v"/><s n="iv"/></l><r>llegar<s n="vblex"/></r></p></e>
       
-      <e><p><l>haʼe<s n="vbser"/><s n="iv"/></l><r>ser<s n="vbser"/></r></p></e>
+    <e><p><l>haʼe<s n="vbser"/><s n="iv"/></l><r>ser<s n="vbser"/></r></p></e>
+    <e><p><l>ikatu<s n="vaux"/><s n="iv"/></l><r>poder<s n="vaux"/></r></p></e>
+    <e><p><l>ikatu<s n="v"/><s n="iv"/></l><r>poder<s n="vblex"/></r></p></e>
+    <e><p><l>hiʼã<s n="v"/><s n="iv"/></l><r>parecer<s n="vblex"/></r></p></e>
+    <e><p><l>hiʼã<s n="v"/><s n="iv"/></l><r>desear<s n="vblex"/></r></p></e>
+    
+    
+
 
       <!-- SECTION: Pronouns -->
       <e><p><l>a<s n="prn"/></l><r>yo<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>re<s n="prn"/></l><r>tú<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>o<s n="prn"/></l><r>el<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>o<s n="prn"/></l><r>ellos<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>ro<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
-      <e><p><l>a<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>ja<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
+      <e><p><l>pe<s n="prn"/></l><r>vosotros<s n="prn"/><s n="tn"/></r></p></e>
 
       <!-- SECTION: Personal Pronouns -->
       <e><p><l>ché<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
