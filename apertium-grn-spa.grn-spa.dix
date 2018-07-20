@@ -219,6 +219,47 @@
 
       <!-- SECTION: Determinantes -->
       <e r="LR"><p><l>r<s n="det"/></l><r></r></p></e>
+      
+      <!-- SECTION: Numerals -->
+	<e><p><l>peteĩ<s n="num"/></l><r>uno<s n="num"/></r></p></e>
+	<e><p><l>peteï<s n="num"/></l><r>uno<s n="num"/></r></p></e>
+	<e><p><l>mokõi<s n="num"/></l><r>dos<s n="num"/></r></p></e>
+	<e><p><l>mbohapy<s n="num"/></l><r>tres<s n="num"/></r></p></e>
+	<e><p><l>irundy<s n="num"/></l><r>cuatro<s n="num"/></r></p></e>
+	<e><p><l>po<s n="num"/></l><r>cinco<s n="num"/></r></p></e>
+	<e><p><l>poteĩ<s n="num"/></l><r>seis<s n="num"/></r></p></e>
+	<e><p><l>pokõi<s n="num"/></l><r>siete<s n="num"/></r></p></e>
+	<e><p><l>poapy<s n="num"/></l><r>ocho<s n="num"/></r></p></e>
+	<e><p><l>porundy<s n="num"/></l><r>nueve<s n="num"/></r></p></e>
+	<e><p><l>pa<s n="num"/></l><r>diez<s n="num"/></r></p></e>
+	<e><p><l>pateĩ<s n="num"/></l><r>once<s n="num"/></r></p></e>
+	<e><p><l>pakõi<s n="num"/></l><r>doce<s n="num"/></r></p></e>
+	<e><p><l>paapy<s n="num"/></l><r>trece<s n="num"/></r></p></e>
+	<e><p><l>parundy<s n="num"/></l><r>catorce<s n="num"/></r></p></e>
+	<e><p><l>papo<s n="num"/></l><r>quince<s n="num"/></r></p></e>
+	<e><p><l>papotẽi<s n="num"/></l><r>dieciséis<s n="num"/></r></p></e>
+	<e><p><l>papokõi<s n="num"/></l><r>diecisiete<s n="num"/></r></p></e>
+	<e><p><l>papoapy<s n="num"/></l><r>dieciocho<s n="num"/></r></p></e>
+	<e><p><l>paporundy<s n="num"/></l><r>diecinueve<s n="num"/></r></p></e>
+	<e><p><l>mokõipa<s n="num"/></l><r>veinte<s n="num"/></r></p></e>
+	<e><p><l>mokõipa% petẽi<s n="num"/></l><r>veiniuno<s n="num"/></r></p></e>
+	<e><p><l>mokõipa% mokõi<s n="num"/></l><r>veintidos<s n="num"/></r></p></e>
+	<e><p><l>mbohapypa<s n="num"/></l><r>trenta<s n="num"/></r></p></e>
+	<e><p><l>irundypa<s n="num"/></l><r>cuarenta<s n="num"/></r></p></e>
+	<e><p><l>popa<s n="num"/></l><r>cincuenta<s n="num"/></r></p></e>
+	<e><p><l>poteĩpa<s n="num"/></l><r>sesenta<s n="num"/></r></p></e>
+	<e><p><l>pokõipa<s n="num"/></l><r>setenta<s n="num"/></r></p></e>
+	<e><p><l>poapypa<s n="num"/></l><r>ochenta<s n="num"/></r></p></e>
+	<e><p><l>porundypa<s n="num"/></l><r>noventa<s n="num"/></r></p></e>
+	<e><p><l>sa<s n="num"/></l><r>cien<s n="num"/></r></p></e>
+	<e><p><l>mokõisa<s n="num"/></l><r>doscientos<s n="num"/></r></p></e>
+	<e><p><l>poteĩsa<s n="num"/></l><r>seiscientos<s n="num"/></r></p></e>
+	<e><p><l>su<s n="num"/></l><r>mil<s n="num"/></r></p></e>
+	<e><p><l>sua<s n="num"/></l><r>milión<s n="num"/></r></p></e>
+	<e><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+	<e><p><l>peteĩha<s n="num"/></l><r>primero<s n="num"/></r></p></e>
+	<e><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+
 
   
 
@@ -4993,7 +5034,7 @@
 
 
       
-      <!-- SECTION: Demonstrative adjectives-->
+      <!-- SECTION: Demonstrative adjectives -->
       <e><p><l>ko<s n="adj"/></l><r>este<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
       <e><p><l>pe<s n="adj"/></l><r>este<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
       <e><p><l>amo<s n="adj"/></l><r>aquel<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
@@ -5003,7 +5044,24 @@
       
       <e><p><l>ku<s n="adj"/></l><r>ese<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>      
       <e><p><l>upe<s n="adj"/></l><r>ese<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>      
-      <e><p><l>aipo<s n="adj"/></l><r>aquel<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>      
+      <e><p><l>aipo<s n="adj"/></l><r>aquel<s n="adj"/><s n="dem"/><s n="sg"/></r></p><par n="adj_GD|ND"/></e>
+      
+     <!-- SECTION: Indefinite adjectives --> 
+
+     <e><p><l>heta<s n="adj"/></l><r>mucho<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>mbovy<s n="adj"/></l><r>poco<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>avave<s n="adj"/></l><r>ningún<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>oimeraẽva<s n="adj"/></l><r>cualquier<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>ambue<s n="adj"/></l><r>otro<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>opa<s n="adj"/></l><r>todo<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>opavave<s n="adj"/></l><r>todo<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>mayma<s n="adj"/></l><r>cada<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>mayma<s n="adj"/></l><r>todo<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>maymáva<s n="adj"/></l><r>cada<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>maymáva<s n="adj"/></l><r>todo<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     <e><p><l>opaite<s n="adj"/></l><r>todo<s n="adj"/><s n=""/>ind</r></p><par n="adj_GD|ND"/></e>
+     
+      
 
       <!-- SECTION: Adjetivos -->
   
