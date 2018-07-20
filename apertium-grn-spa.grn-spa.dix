@@ -13372,6 +13372,14 @@
       <e><p><l>ro<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>ja<s n="prn"/></l><r>nosotros<s n="prn"/><s n="tn"/></r></p></e>
       <e><p><l>pe<s n="prn"/></l><r>vosotros<s n="prn"/><s n="tn"/></r></p></e>
+      
+      <!-- SECTION: Interrogative pronouns -->
+      <e><p><l>ava<s n="prn"/><s n="itg"/></l><r>quién<s n="prn"/><s n="itg"/></r></p></e>
+      <e><p><l>máva<s n="prn"/><s n="itg"/></l><r>quién<s n="prn"/><s n="itg"/></r></p></e>
+      <e><p><l>mbaʼe<s n="prn"/><s n="itg"/></l><r>qué<s n="prn"/><s n="itg"/></r></p></e>
+      <e><p><l>mbaʼépa<s n="prn"/><s n="itg"/></l><r>qué<s n="prn"/><s n="itg"/></r></p></e>
+
+
 
       <!-- SECTION: Personal Pronouns -->
       <e><p><l>ché<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>yo<s n="pers"/><s n="tn"/></r></p></e>
