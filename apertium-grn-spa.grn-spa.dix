@@ -28,6 +28,7 @@
     <sdef n="attr"            c="Attributive"/>
     <sdef n="top"             c="Toponym"/>
     <sdef n="loc"             c="Toponym"/>
+    <sdef n="dat"             c=""/>
     <sdef n="ant"             c="Anthroponym"/>
     <sdef n="cog"             c="Cognomen"/>
     <sdef n="org"             c="Organisation"/>
