@@ -12,15 +12,51 @@
     <def-cat n="top">
       <cat-item tags="np.top"/>
     </def-cat>
+		<def-cat n="np-ant">
+      <cat-item tags="np.ant"/>
+    </def-cat>
     <def-cat n="r-det">
       <cat-item lemma="r" tags="det"/>
     </def-cat>
+		<def-cat n="prn-pers">
+      <cat-item tags="prn.pers.*"/>
+    </def-cat>
+		<def-cat n="prn"> 
+      <cat-item tags="prn.itg.*"/>
+      <cat-item tags="prn.itg"/>
+      <cat-item tags="prn.ind.*"/>
+      <cat-item tags="prn.ind"/>
+      <cat-item tags="prn.neg.*"/>
+      <cat-item tags="prn.neg"/>
+      <cat-item tags="prn.dem.*"/>
+      <cat-item tags="prn.dem"/>
+      <cat-item tags="prn.*"/>
+      <cat-item tags="prn"/>
+			<cat-item tags="prn.pos*"/>
+      <cat-item tags="prn.pos"/>
+			<cat-item tags="prn.pro*"/>
+      <cat-item tags="prn.pro"/>
+    </def-cat>
+
+		<def-cat n="conj">
+      <cat-item tags="cnjcoo"/>
+      <cat-item tags="cnjsub"/>
+    </def-cat>
+
+		<def-cat n="adv">
+      <cat-item tags="adv"/>
+      <cat-item tags="adv.*"/>
+    </def-cat>
+
     <def-cat n="num">
       <cat-item tags="num"/>
     </def-cat>
     <def-cat n="vbser">
       <cat-item tags="vbser.iv.pres"/>
     </def-cat>
+		<def-cat n="vblex">
+   		<cat-item tags="vblex.*"/>
+		</def-cat>
     <def-cat n="post">
       <cat-item tags="post"/>
     </def-cat>
@@ -46,6 +82,9 @@
       <attr-item tags="mf"/>
       <attr-item tags="GD"/>
     </def-attr>
+		<def-attr n='a_tense'>
+			<attr-item tags="pres"/>
+		</def-attr>
     <def-attr n="a_nbr">
       <attr-item tags="sg"/>
       <attr-item tags="pl"/>
@@ -2489,7 +2528,6 @@
         </out>
       </action>
     </rule>
-
 
     <!-- SECTION: Puntuación -->
 
