@@ -2,7 +2,6 @@
 ## Makefile for Guarani--Spanish
 ###############################################################################
 
-VERSION=0.1.0
 LANG1=grn
 LANG2=spa
 PREFIX1=$(LANG1)-$(LANG2)
@@ -13,7 +12,6 @@ BASENAME=apertium-$(PREFIX1)
 TARGETS_COMMON =		\
 	$(PREFIX1).automorf.bin	\
 	$(PREFIX1).automorf.hfst \
-	$(PREFIX1).prob		\
 	$(PREFIX1).rlx.bin	\
 	$(PREFIX1).autobil.bin	\
 	$(PREFIX1).autolex.bin	\
@@ -98,9 +96,6 @@ $(PREFIX1).autogen.bin: $(AP_SRC2)/$(LANG2).autogen.bin
 ###############################################################################
 ## Tagger models
 ###############################################################################
-
-$(PREFIX1).prob: $(AP_SRC1)/$(LANG1).prob
-	cp $< $@
 
 $(PREFIX2).prob: $(AP_SRC2)/$(LANG2).prob
 	cp $< $@
@@ -235,4 +230,3 @@ test: all
 	@echo "house" > .test-ref
 	@diff .test-ref .test-mt
 	@rm .test-ref .test-mt
-
