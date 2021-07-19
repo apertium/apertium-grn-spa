@@ -1,0 +1,20 @@
+[27He1jvHBzJi#0] ^default<default>{^132<num>$}$
+[/27He1jvHBzJi]
+[7y0SfeN7lCuq#0] ^default<default>{^5<num>$}$
+[/7y0SfeN7lCuq]
+[8VNDkieb3b-d#0] ^default<default>{^00<num>$}$
+[/8VNDkieb3b-d]
+[GL60gTcj54ih#0] ^default<default>{^543<num>$}$
+[/GL60gTcj54ih]
+[JsdvDAwXakRR#0] ^unknown<unknown>{^*marlio$}$
+[/JsdvDAwXakRR]
+[QbgF6nrAFOI1#0] ^sent<SENT>{^;<sent>$}$
+[/QbgF6nrAFOI1]
+[io3oI9XtPhJ0#0] ^sent<SENT>{^?<sent>$}$
+[/io3oI9XtPhJ0]
+[qi-G-OPD4iN7#0] ^default<default>{^ỹrõ<cnjcoo>$}$
+[/qi-G-OPD4iN7]
+[tJNYlMjOFr3m#0] ^sent<SENT>{^…<sent>$}$
+[/tJNYlMjOFr3m]
+[u3IIvJtdfATx#0] ^sent<SENT>{^!<sent>$}$
+[/u3IIvJtdfATx]

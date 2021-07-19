@@ -1,0 +1,10 @@
+[2UVTzX3-rufP#0] ^colectivo<n><m><sg>$ ^de<pr>$ ^<dem>$ ^@niko<nar>$
+[/2UVTzX3-rufP]
+[C5GJQ98JYrx6#0] ^39<num>$
+[/C5GJQ98JYrx6]
+[QFR55NqOn6iE#0] ^Árktiko<np><loc>$ ^por<pr>$ ^@kue<post>$ ^@icha<comp>$ ^@rõ<post>$ ^@se<vol>$ ^@gua<post>$
+[/QFR55NqOn6iE]
+[mEKCz1iJb4Nl#0] ^@ĩ<v><iv>$ ^@ỹ<car>$
+[/mEKCz1iJb4Nl]
+[u3IIvJtdfATx#0] ^!<sent>$
+[/u3IIvJtdfATx]

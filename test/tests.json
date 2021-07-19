@@ -1,0 +1,10 @@
+{
+    "grn-spa": {
+        "input": "grn-spa-input.txt",
+        "mode": "grn-spa"
+    },
+    "spa-grn": {
+        "input": "spa-grn-input.txt",
+        "mode": "spa-grn"
+    }
+}

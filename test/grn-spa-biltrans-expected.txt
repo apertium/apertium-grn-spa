@@ -1,0 +1,10 @@
+[2UVTzX3-rufP#0] ^ónivu<n>/colectivo<n><m><sg>$ ^gui<post>/de<pr>$ ^va<subs><dem>/<dem>$ ^niko<nar>/@niko<nar>$
+[/2UVTzX3-rufP]
+[C5GJQ98JYrx6#0] ^39<num>/39<num>$
+[/C5GJQ98JYrx6]
+[QFR55NqOn6iE#0] ^Árktiko<np><top>/Árktiko<np><loc>$ ^rehe<post>/por<pr>/mediante<pr>$ ^kue<post>/@kue<post>$ ^icha<comp>/@icha<comp>$ ^rõ<post>/@rõ<post>$ ^se<vol>/@se<vol>$ ^gua<post>/@gua<post>$
+[/QFR55NqOn6iE]
+[mEKCz1iJb4Nl#0] ^ĩ<v><iv>/@ĩ<v><iv>$ ^ỹ<car>/@ỹ<car>$
+[/mEKCz1iJb4Nl]
+[u3IIvJtdfATx#0] ^!<sent>/!<sent>$
+[/u3IIvJtdfATx]

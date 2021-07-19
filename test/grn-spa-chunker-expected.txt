@@ -1,0 +1,10 @@
+[2UVTzX3-rufP#0] ^default<default>{^colectivo<n><m><sg>$}$ ^default<default>{^de<pr>$}$ ^default<default>{^<dem>$}$ ^default<default>{^@niko<nar>$}$
+[/2UVTzX3-rufP]
+[C5GJQ98JYrx6#0] ^default<default>{^39<num>$}$
+[/C5GJQ98JYrx6]
+[QFR55NqOn6iE#0] ^default<default>{^Árktiko<np><loc>$}$ ^default<default>{^por<pr>$}$ ^default<default>{^@kue<post>$}$ ^default<default>{^@icha<comp>$}$ ^default<default>{^@rõ<post>$}$ ^default<default>{^@se<vol>$}$ ^default<default>{^@gua<post>$}$
+[/QFR55NqOn6iE]
+[mEKCz1iJb4Nl#0] ^default<default>{^@ĩ<v><iv>$}$ ^default<default>{^@ỹ<car>$}$
+[/mEKCz1iJb4Nl]
+[u3IIvJtdfATx#0] ^sent<SENT>{^!<sent>$}$
+[/u3IIvJtdfATx]
